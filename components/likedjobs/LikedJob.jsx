@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import { ActivityIndicator,TouchableOpacity, Button, FlatList, ScrollView, Text, View,Image } from 'react-native';
 import { Swipeable } from 'react-native-gesture-handler';
 import   NearbyJobCard  from '../common/cards/nearby/NearbyJobCard';
 import  useFetch  from '../../hook/useFetch'; // Assuming useFetch is properly exported from useFetch.js
 import { COLORS, icons, images, SIZES } from '../../constants';
 import styles from './LikedJob.style';
+import { Stack,router } from "expo-router";
 
 
 const LikedJob = ({ jobs,deslike,refresh}) => {
 
   const [refreshing, setRefreshing] = useState(false);
-
-
-
-
-
 
 
 
