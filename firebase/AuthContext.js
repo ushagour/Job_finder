@@ -11,6 +11,8 @@ const router = useRouter();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [user_loading, set_loading] = useState(true);
+
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
@@ -19,6 +21,9 @@ export const AuthProvider = ({ children }) => {
         // If userAuth exists, set the user object to the state
         // getLikedJobs(userAuth)
         getUserProfile(userAuth)
+        // set_loading(false)
+
+
 
 
       }
@@ -82,11 +87,15 @@ export const AuthProvider = ({ children }) => {
         // Assuming there's only one document with the matching UID
         const userDocSnap = querySnapshot.docs[0];
         const userData = userDocSnap.data();
+        console.log("1"+userData);    
         setUser(userData);
-        console.log(userData);    
+        set_loading(false)
+
       } else {
         console.log("User profile not found.");
         setUser(null);
+        set_loading(false)
+
       }
     } catch (error) {
       console.error('Error fetching user profile:', error);
@@ -107,7 +116,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, signIn, signOut,handelLogingGoogle}}>
+    <AuthContext.Provider value={{ user, signIn, signOut,handelLogingGoogle,user_loading}}>
       {children}
     </AuthContext.Provider>
   );

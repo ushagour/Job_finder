@@ -52,10 +52,11 @@ function RootLayoutNav() {
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <AuthProvider>
           <LikedJobProvider>
-            <Stack>
+          <Stack />
+
+            {/* <Stack>
               <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-              {/* Ajoutez d'autres écrans ici si nécessaire */}
-            </Stack>
+            </Stack> */}
           </LikedJobProvider>
         </AuthProvider>
       </ThemeProvider>

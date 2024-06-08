@@ -19,17 +19,6 @@ const Profile = () => {
   const [likedJobs, setLikedJobs] = useState(null);
 
   // Define likedJobs state with initial value null
-/*
-   To ensure that the likedJobs state has the correct initial value before rendering the component,
-  you can use a loading state to indicate that data fetching is in progress.
-  Here's how you can modify your Profile component to handle this:
-  */
-
-
-
-
-
-
 
 
   const getLikedJobs = async () => {
