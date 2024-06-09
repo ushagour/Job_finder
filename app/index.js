@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, ScrollView, View, Text } from "react-native";
+import { SafeAreaView, ScrollView, View, Text, ActivityIndicator } from "react-native";
 import { Stack, useRouter } from "expo-router";
-import * as Location from 'expo-location';
-
 import { COLORS, icons, images, SIZES } from "../constants";
 import {
   Nearbyjobs,
@@ -12,33 +10,13 @@ import {
   Welcome,
 } from "../components";
 import { useAuth } from '../firebase/AuthContext';
+import { useLocation } from '../hook/context/LocationContext';
 
 const Home = () => {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
   const { user, user_loading } = useAuth();
-  const [city, setCity] = useState(null);
-  const [region, setRegion] = useState(null);
-
-  const fetchCityName = async () => {
-    try {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        throw new Error('Permission to access location was denied');
-      }
-
-      let location = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High });
-      const { latitude, longitude } = location.coords;
-
-      let addressResponse = await Location.reverseGeocodeAsync({ latitude, longitude });
-      let city = addressResponse[0].city;
-      let region = addressResponse[0].region;
-      return { city, region };
-    } catch (error) {
-      console.error('Error fetching location:', error);
-      return null;
-    }
-  };
+  const { city, region, location_loading } = useLocation();
 
   const redirectMe = () => {
     if (user) {
@@ -49,21 +27,19 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const getLocation = async () => {
-      const info = await fetchCityName();
-      if (info) {
-        setCity(info.city);
-        setRegion(info.region);
-        console.log(info.city);
-        console.log(info.region);
-      }
-    };
+    if (!location_loading) {
+      console.log(`Location loaded: ${region}, ${city}`);
+    }
+  }, [location_loading, city, region]);
 
-    getLocation();
-  }, []);
 
-  if (user_loading) {
-    return <Text>Loading...</Text>;
+
+  if (location_loading) {
+    return (
+      <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: COLORS.lightWhite }}>
+        <ActivityIndicator size="large" color={COLORS.primary} />
+      </SafeAreaView>
+    );
   }
 
   return (
@@ -98,8 +74,8 @@ const Home = () => {
                 }
               }}
             />
-            <Popularjobs country={region} />
-            <Nearbyjobs city={region} />
+            <Popularjobs country={region || "Morocco"} />
+            <Nearbyjobs city={city || "Rabat"} />
           </View>
         </ScrollView>
       </SafeAreaView>

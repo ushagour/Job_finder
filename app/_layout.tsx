@@ -7,6 +7,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { AuthProvider } from '../firebase/AuthContext';
 import { LikedJobProvider } from '../hook/context/LikedJobContext';
+import { LocationProvider } from '../hook/context/LocationContext';
 import { useColorScheme } from '@/components/useColorScheme';
 
 export {
@@ -51,6 +52,8 @@ function RootLayoutNav() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <AuthProvider>
+          <LocationProvider>
+
           <LikedJobProvider>
           <Stack />
 
@@ -58,6 +61,7 @@ function RootLayoutNav() {
               <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
             </Stack> */}
           </LikedJobProvider>
+            </LocationProvider>
         </AuthProvider>
       </ThemeProvider>
     </GestureHandlerRootView>
