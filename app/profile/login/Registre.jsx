@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { Stack, useRouter } from 'expo-router';
+import { SafeAreaView, KeyboardAvoidingView, View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
-import { app, auth } from '../../../firebase/config';
-import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
-import { COLORS,images } from '../../../constants';
+import { createUserWithEmailAndPassword,getAuth } from 'firebase/auth';
+import { COLORS, images } from '../../../constants';
+import styles from './login.style'; // Import the shared styles from the login screen
+import { Stack, useRouter } from 'expo-router';
+import { app } from '../../../firebase/config'; // Import your Firebase app instance
 
-const Registre = () => {
+const Register = () => {
   const router = useRouter();
-  const firestore = getFirestore(app);
-  const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleSignup = async () => {
+  const handleRegister = async () => {
     try {
       // Validate inputs
-      if (!email || !displayName || !password || !confirmPassword) {
+      if (!email || !name || !password || !confirmPassword) {
         setError('All fields are required');
-        alert(error)
         return;
       }
 
@@ -29,134 +28,104 @@ const Registre = () => {
         return;
       }
 
-        // Create user in Firebase Authentication
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
-  
-        // Store user data in Firestore
-        const usersCollection = collection(firestore, 'users');
-        await addDoc(usersCollection, {
-          uid: user.uid,
-          displayName: displayName,
-          avatar: "../avatar.jpg",
-          email: email,
-        });
-        
-        console.log(`User with UID ${user.uid} registered successfully`);
-        router.push(`/profile/profile`);
-      } catch (error) {
-        console.error('Error signing up:', error);
-        setError('Error signing up. Please try again.');
-      }
-    };
+      const firestore = getFirestore(app);
+      const auth = getAuth(app);
+
+      // Create user in Firebase Authentication
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // Store user data in Firestore
+      const usersCollection = collection(firestore, 'users');
+      await addDoc(usersCollection, {
+        uid: user.uid,
+        displayName: name,
+        avatar: images.profile,
+        email: email,
+      });
+      
+      console.log(`User with UID ${user.uid} registered successfully`);
+      router.push(`/profile/profile`);
+    } catch (error) {
+      console.error('Error signing up:', error);
+      setError('Error signing up. Please try again.');
+    }
+  };
 
   return (
-    <KeyboardAvoidingView style={styles.container} behavior="padding">
-      <Stack.Screen options={{ headerShown: false }}>
-        <View style={styles.headerwrapper}>
-          <Text>ali</Text>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+      <Stack.Screen
+        options={{
+          headerStyle: { backgroundColor: COLORS.lightWhite },
+          headerShadowVisible: false,
+          headerBackVisible: false,
+          headerShown: false,
+        }}
+      />
+      <KeyboardAvoidingView style={styles.container}>
+        <View style={styles.headerWrapper}>
           <Text style={styles.headerTitle}>Register</Text>
-          {error ? <Text style={styles.errorText}>{error}</Text> : null}
         </View>
-      </Stack.Screen>
-
-      <View style={styles.Inputscontainer}>
-        <TextInput
-          placeholder="Display Name"
-          value={displayName}
-          onChangeText={(text) => setDisplayName(text)}
-          style={styles.input}
-        />
-        <TextInput
-          placeholder="Email"
-          value={email}
-          onChangeText={(text) => setEmail(text)}
-          style={styles.input}
-        />
-        <TextInput
-          placeholder="Password"
-          value={password}
-          onChangeText={(text) => setPassword(text)}
-          secureTextEntry
-          style={styles.input}
-        />
-        <TextInput
-          placeholder="Confirm Password"
-          value={confirmPassword}
-          onChangeText={(text) => setConfirmPassword(text)}
-          secureTextEntry
-          style={styles.input}
-        />
-      </View>
-
-      <View style={styles.Buttunscontainer}>
-        <TouchableOpacity onPress={handleSignup} style={styles.button}>
-          <Text style={styles.ButtunsText}>Register</Text>
+        <View style={styles.inputsContainer}>
+          <TextInput
+            placeholder="Email"
+            placeholderTextColor={COLORS.gray}
+            value={email}
+            onChangeText={text => setEmail(text)}
+            style={styles.input}
+          />
+          <TextInput
+            placeholder="Name"
+            placeholderTextColor={COLORS.gray}
+            value={name}
+            onChangeText={text => setName(text)}
+            style={styles.input}
+          />
+          <TextInput
+            placeholder="Password"
+            placeholderTextColor={COLORS.gray}
+            value={password}
+            onChangeText={text => setPassword(text)}
+            secureTextEntry
+            style={styles.input}
+          />
+          <TextInput
+            placeholder="Confirm Password"
+            placeholderTextColor={COLORS.gray}
+            value={confirmPassword}
+            onChangeText={text => setConfirmPassword(text)}
+            secureTextEntry
+            style={styles.input}
+          />
+        </View>
+        <View style={styles.buttonsContainer}>
+          <TouchableOpacity
+            onPress={handleRegister}
+            style={styles.button}
+          >
+            <Text style={styles.buttonText}>Register</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => router.push('/profile/login/Login')}
+            style={[styles.button, styles.buttonOutLine]}
+          >
+            <Text style={[styles.buttonText, styles.buttonTextOutLine]}>Back to Login</Text>
+          </TouchableOpacity>
+        </View>
+        {/* Line */}
+        <View style={styles.lineStyle}>
+          <View style={{ flex: 1, height: 1, backgroundColor: 'black' }} />
+          <View>
+            <Text style={{ width: 50, textAlign: 'center' }}>Or</Text>
+          </View>
+          <View style={{ flex: 1, height: 1, backgroundColor: 'black' }} />
+        </View>
+        <TouchableOpacity onPress={() => router.push('/')} style={[styles.button, styles.buttonOutLine]}>
+          <Text style={[styles.buttonText, styles.buttonTextOutLine]}>Go to Home</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => router.push(`/profile/login/Login`)} style={[styles.button, styles.buttonOutLine]}>
-          <Text style={styles.ButtunsText}>Login</Text>
-        </TouchableOpacity>
-      </View>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 };
 
-export default Registre;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  headerwrapper: {
-    marginBottom: 30,
-    alignItems: 'center',
-  },
-  headerTitle: {
-    color:'black',
-    fontSize: 33,
-  },
-  Inputscontainer: {
-    width: '80%',
-  },
-  input: {
-    backgroundColor: 'white',
-    paddingHorizontal: 15,
-    borderRadius: 20,
-    marginVertical: 7,
-    height: 40,
-    fontSize: 16,
-    color: 'black',
-    borderWidth: 0.3,
-    borderColor: '#ccc',
-  },
-  Buttunscontainer: {
-    width: '60%',
-    marginTop: 40,
-    alignItems: 'center',
-  },
-  button: {
-    backgroundColor: '#023047',
-    width: '100%',
-    padding: 15,
-    borderRadius: 10,
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  buttonOutLine: {
-    backgroundColor: '#219ebc',
-    borderColor: '#8ecae6',
-    borderWidth: 2,
-  },
-  ButtunsText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: '700',
-  },
-  errorText: {
-    color: COLORS.danger,
-    marginBottom: 10,
-    textAlign: 'center',
-  },
-});
+export default Register;
