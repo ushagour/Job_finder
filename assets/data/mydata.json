@@ -1,0 +1,871 @@
+{
+    "data": [
+      {
+        "job_id": "p1-jGSG68qVtxL-QAAAAAA==",
+        "employer_name": "Verdant Infotech Solutions",
+        "employer_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnJ6hHVsNfNYSHOGP2hFaf-k9G50C4ovK6T2Av&s=0",
+        "employer_website": null,
+        "employer_company_type": null,
+        "job_publisher": "LinkedIn",
+        "job_employment_type": "FULLTIME",
+        "job_title": "Python Developer",
+        "job_apply_link": "https://www.linkedin.com/jobs/view/python-developer-at-verdant-infotech-solutions-3907092982",
+        "job_apply_is_direct": false,
+        "job_apply_quality_score": 0.639,
+        "apply_options": [
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/python-developer-at-verdant-infotech-solutions-3907092982",
+            "is_direct": false
+          },
+          {
+            "publisher": "Dive Into Python",
+            "apply_link": "https://diveintopython.org/jobs/python-developer-8406",
+            "is_direct": false
+          },
+          {
+            "publisher": "Monster",
+            "apply_link": "https://www.monster.com/job-openings/python-developer-copper-canyon-tx--e551bd20-84b9-45c8-8307-17d7b90203bb",
+            "is_direct": false
+          },
+          {
+            "publisher": "Adzuna",
+            "apply_link": "https://www.adzuna.com/details/4660003760",
+            "is_direct": false
+          },
+          {
+            "publisher": "Resume-Library.com",
+            "apply_link": "https://www.resume-library.com/feed/click/551/148413873?dpj=yes",
+            "is_direct": true
+          }
+        ],
+        "job_description": "Python Developer (Two different level jobs based off experience)\n\nWells Fargo\n\nOnsite in Plano, Texas from Day 1 for 3 times a week.\n\n6m+\n\nGC,USC\n\nVideo Interview\n\nNeeds\n\nPython\n\nApi's Ansible\n\nApp Dev profiles\n\nProject\n\nClient is building a brand new data center.\n\nThis team falls under the Devops umbrella, however there is no devops needed.\n\nThe Python app developer will be doing new development and automation of on prem processes.\n\nLooking for strong object orientation and class based programming\n\n|\n\n,\n\n5208 Windsor Ln, Copper Canyon, Texas, 75077",
+        "job_is_remote": false,
+        "job_posted_at_timestamp": 1713721846,
+        "job_posted_at_datetime_utc": "2024-04-21T17:50:46.000Z",
+        "job_city": "Copper Canyon",
+        "job_state": "TX",
+        "job_country": "US",
+        "job_latitude": 33.095955,
+        "job_longitude": -97.09668,
+        "job_benefits": null,
+        "job_google_link": "https://www.google.com/search?gl=us&hl=en&rciv=jb&q=python+developer+in+texas,+usa&start=0&ibp=htl;jobs#fpstate=tldetail&htivrt=jobs&htiq=python+developer+in+texas,+usa&htidocid=p1-jGSG68qVtxL-QAAAAAA%3D%3D",
+        "job_offer_expiration_datetime_utc": "2024-05-21T17:50:11.000Z",
+        "job_offer_expiration_timestamp": 1716313811,
+        "job_required_experience": {
+          "no_experience_required": false,
+          "required_experience_in_months": null,
+          "experience_mentioned": true,
+          "experience_preferred": false
+        },
+        "job_required_skills": null,
+        "job_required_education": {
+          "postgraduate_degree": false,
+          "professional_certification": false,
+          "high_school": false,
+          "associates_degree": false,
+          "bachelors_degree": true,
+          "degree_mentioned": false,
+          "degree_preferred": false,
+          "professional_certification_mentioned": false
+        },
+        "job_experience_in_place_of_education": false,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_currency": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "Python",
+            "Looking for strong object orientation and class based programming"
+          ]
+        },
+        "job_job_title": null,
+        "job_posting_language": "en",
+        "job_onet_soc": "15113200",
+        "job_onet_job_zone": "4",
+        "job_occupational_categories": null,
+        "job_naics_code": null,
+        "job_naics_name": null
+      },
+      {
+        "job_id": "lLZWx16w9_ZQ4Zw1AAAAAA==",
+        "employer_name": "RxLogixx Corporation",
+        "employer_logo": null,
+        "employer_website": null,
+        "employer_company_type": null,
+        "job_publisher": "LinkedIn",
+        "job_employment_type": "FULLTIME",
+        "job_title": "Python Developer",
+        "job_apply_link": "https://www.linkedin.com/jobs/view/python-developer-at-rxlogixx-corporation-3903641206",
+        "job_apply_is_direct": false,
+        "job_apply_quality_score": 0.6286,
+        "apply_options": [
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/python-developer-at-rxlogixx-corporation-3903641206",
+            "is_direct": false
+          }
+        ],
+        "job_description": "Company Description\n\nITMC SOLUTIONS is a leading provider of Pharmacovigilance (PV) technology solutions, applying cutting-edge technology advances like machine learning and artificial intelligence. The company has been selected by the FDA to replace their legacy FAERS signaling system with RxLogix PV Surveillance Suite Platform. RxLogix works with pharmacovigilance and risk management professionals to ensure patient safety and increase compliance, productivity, and quality in the drug safety value chain. Based in Noida, India, RxLogix is known for its defiant bold thinking and proactive pursuit of innovative solutions.\n\nRole Description\n\nThis is a full-time on-site role for a Python Developer at RxLogix Corporation in Noida. The Python Developer will be responsible for back-end web development, software development, object-oriented programming (OOP), programming, and databases. The role will involve day-to-day tasks such as developing and maintaining Python-based applications, participating in code reviews and testing, collaborating with cross-functional teams, and troubleshooting and debugging applications.\n\nNOTE :\n• Need immediated joiners.\n• Only freshers is required.\n• Salary - $ 105K annually\n\nQualifications\n• Experience in back-end web development, software development, and object-oriented programming (OOP)\n• Strong programming skills, particularly in Python\n• Proficiency in working with databases\n• Knowledge of software development best practices\n• Strong problem-solving and analytical skills\n• Ability to work well in a team and collaborate with cross-functional teams\n• Excellent written and verbal communication skills\n• Bachelor's degree in Computer Science or related field",
+        "job_is_remote": false,
+        "job_posted_at_timestamp": 1713752892,
+        "job_posted_at_datetime_utc": "2024-04-22T02:28:12.000Z",
+        "job_city": "Dallas",
+        "job_state": "TX",
+        "job_country": "US",
+        "job_latitude": 32.776665,
+        "job_longitude": -96.79699,
+        "job_benefits": null,
+        "job_google_link": "https://www.google.com/search?gl=us&hl=en&rciv=jb&q=python+developer+in+texas,+usa&start=0&ibp=htl;jobs#fpstate=tldetail&htivrt=jobs&htiq=python+developer+in+texas,+usa&htidocid=lLZWx16w9_ZQ4Zw1AAAAAA%3D%3D",
+        "job_offer_expiration_datetime_utc": "2024-10-19T02:26:33.000Z",
+        "job_offer_expiration_timestamp": 1729304793,
+        "job_required_experience": {
+          "no_experience_required": false,
+          "required_experience_in_months": null,
+          "experience_mentioned": true,
+          "experience_preferred": false
+        },
+        "job_required_skills": [
+          "Python (Programming Language)",
+          "Object-oriented Languages",
+          "Back-End Web Development",
+          "Object-Oriented Programming (OOP)",
+          "Cascading Style Sheets (CSS)",
+          "Databases",
+          "JSON",
+          "MongoDB",
+          "Django",
+          "HTML5"
+        ],
+        "job_required_education": {
+          "postgraduate_degree": false,
+          "professional_certification": false,
+          "high_school": false,
+          "associates_degree": false,
+          "bachelors_degree": true,
+          "degree_mentioned": true,
+          "degree_preferred": true,
+          "professional_certification_mentioned": false
+        },
+        "job_experience_in_place_of_education": false,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_currency": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "Only freshers is required",
+            "Experience in back-end web development, software development, and object-oriented programming (OOP)",
+            "Strong programming skills, particularly in Python",
+            "Proficiency in working with databases",
+            "Knowledge of software development best practices",
+            "Strong problem-solving and analytical skills",
+            "Ability to work well in a team and collaborate with cross-functional teams",
+            "Excellent written and verbal communication skills",
+            "Bachelor's degree in Computer Science or related field"
+          ],
+          "Responsibilities": [
+            "The Python Developer will be responsible for back-end web development, software development, object-oriented programming (OOP), programming, and databases",
+            "The role will involve day-to-day tasks such as developing and maintaining Python-based applications, participating in code reviews and testing, collaborating with cross-functional teams, and troubleshooting and debugging applications"
+          ],
+          "Benefits": [
+            "Salary - $ 105K annually"
+          ]
+        },
+        "job_job_title": null,
+        "job_posting_language": "en",
+        "job_onet_soc": "15113200",
+        "job_onet_job_zone": "4",
+        "job_occupational_categories": null,
+        "job_naics_code": null,
+        "job_naics_name": null
+      },
+      {
+        "job_id": "fmiT2fXSQyzuUltkAAAAAA==",
+        "employer_name": "TEK Inspirations LLC",
+        "employer_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5HjDqtwtkHMJvPsJQynEFn3JvQZQLRbZjHEIX&s=0",
+        "employer_website": null,
+        "employer_company_type": null,
+        "job_publisher": "LinkedIn",
+        "job_employment_type": "CONTRACTOR",
+        "job_title": "Python Developer with Ex Capital Bank Experience",
+        "job_apply_link": "https://www.linkedin.com/jobs/view/python-developer-with-ex-capital-bank-experience-at-tek-inspirations-llc-3906695726",
+        "job_apply_is_direct": false,
+        "job_apply_quality_score": 0.6332,
+        "apply_options": [
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/python-developer-with-ex-capital-bank-experience-at-tek-inspirations-llc-3906695726",
+            "is_direct": false
+          }
+        ],
+        "job_description": "Position: Senior Python Developer with Ex Capital One Client Experience\n\nLocation: Plano, TX / Mclean, VA / Richmond, VA/New York, NY/Chicago, IL Hybrid Role\n\nDuration: 12+ Months\n\nMOI: Zoom interview\n\nJob Description\n\nNeed Ex Capital One Employee\n\nNeed 6-8 years of experience.\n\nMust have Skill Set:\n\nPython coding and development\n\nStep functions\n\nLambdas\n\nAWS\n\nThanks & Regards,\n\nShaily\n\nshailesh.pandey@tekinspirations.com",
+        "job_is_remote": false,
+        "job_posted_at_timestamp": 1713817263,
+        "job_posted_at_datetime_utc": "2024-04-22T20:21:03.000Z",
+        "job_city": "Plano",
+        "job_state": "TX",
+        "job_country": "US",
+        "job_latitude": 33.019844,
+        "job_longitude": -96.69888,
+        "job_benefits": null,
+        "job_google_link": "https://www.google.com/search?gl=us&hl=en&rciv=jb&q=python+developer+in+texas,+usa&start=0&ibp=htl;jobs#fpstate=tldetail&htivrt=jobs&htiq=python+developer+in+texas,+usa&htidocid=fmiT2fXSQyzuUltkAAAAAA%3D%3D",
+        "job_offer_expiration_datetime_utc": "2024-05-22T20:21:03.000Z",
+        "job_offer_expiration_timestamp": 1716409263,
+        "job_required_experience": {
+          "no_experience_required": false,
+          "required_experience_in_months": 72,
+          "experience_mentioned": true,
+          "experience_preferred": false
+        },
+        "job_required_skills": [
+          "English",
+          "Python (Programming Language)",
+          "Amazon Web Services (AWS)",
+          "AWS Lambda",
+          "AWS Step Functions"
+        ],
+        "job_required_education": {
+          "postgraduate_degree": false,
+          "professional_certification": false,
+          "high_school": false,
+          "associates_degree": false,
+          "bachelors_degree": true,
+          "degree_mentioned": false,
+          "degree_preferred": false,
+          "professional_certification_mentioned": false
+        },
+        "job_experience_in_place_of_education": false,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_currency": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "Need 6-8 years of experience",
+            "Must have Skill Set:",
+            "Python coding and development"
+          ]
+        },
+        "job_job_title": "Experience",
+        "job_posting_language": "en",
+        "job_onet_soc": "15113200",
+        "job_onet_job_zone": "4",
+        "job_occupational_categories": null,
+        "job_naics_code": null,
+        "job_naics_name": null
+      },
+      {
+        "job_id": "zUu7xQGsS73G02pLAAAAAA==",
+        "employer_name": "Dellfor Technologies",
+        "employer_logo": null,
+        "employer_website": null,
+        "employer_company_type": null,
+        "job_publisher": "ZipRecruiter",
+        "job_employment_type": "CONTRACTOR",
+        "job_title": "python developer",
+        "job_apply_link": "https://www.ziprecruiter.com/c/Dellfor-Technologies/Job/Python-Developer/-in-Texas-City,TX?jid=a179d64a86c79fc5",
+        "job_apply_is_direct": false,
+        "job_apply_quality_score": 0.6727,
+        "apply_options": [
+          {
+            "publisher": "ZipRecruiter",
+            "apply_link": "https://www.ziprecruiter.com/c/Dellfor-Technologies/Job/Python-Developer/-in-Texas-City,TX?jid=a179d64a86c79fc5",
+            "is_direct": false
+          },
+          {
+            "publisher": "Smart Recruiters Jobs",
+            "apply_link": "https://jobs.smartrecruiters.com/DellforTechnologies/112787871-python-developer",
+            "is_direct": false
+          },
+          {
+            "publisher": "WhatJobs",
+            "apply_link": "https://www.whatjobs.com/job/python-developer/texas-city/1544322972",
+            "is_direct": false
+          }
+        ],
+        "job_description": "Company Description\n\nDellfor Technologies is founded by software professionals with fresh approach, and ideas empowering clients and partners in meeting the unique challenges created by transforming business needs. Our technical, domain expertise across obust solutions. We strive to prove ourselves from project inception through completion... Our technical, domain expertise across industries and process oriented approach enables clients to develop cost effective and robust solutions. We strive to prove ourselves from project inception through completion...\n\nTo succeed in the Dellfor technologies, you need exceptional connections - to the right experts, the right opportunities and the right answers. You'll find Dellfor Technologies right in the center of this ever-changing technological world - uncovering opportunities and connecting possibilities.\n\nAs a global provider of IT staffing services, Dellfor Technologies connects the very best IT professionals to great opportunities at leading companies. And we do it every single day - for both temporary and permanent assignments and across virtually all industries. We use our insight, flexibility and expanded resources to anticipate the needs of leading tech companies and help them make exceptional connections with top tech talent.\n\nJob Description\n\nROLE :Python Developer\n\nDURATION: Contract\n\nJob description\n\n5+years of experience\n\nPython will be the primary language, using which developer would perform SQL/CRUD operations in DB, file extraction/transformation/generation (CSV, XML, JSON, PDF), email integration.\n\nWorked with onsite/offshore model.\n\nExcellent communication skills (written and verbal), interpersonal skills, as well as outstanding organizational skills.\n\nAbility to work well under pressure in high stress situations with a calm demeanor.\n\nAdditional Information\n\nHighlights and benefits\n• We are a registered E verified company\n• Starting salary between $ 60,000 with regular increments\n• Free classroom skill enhancement program\n• Relocation allowance\n• Referral bonus\n• On the job support from experienced professionals in the relative field\n• Travel allowance\n• Insurance- Medical, dental, vision and 401K\n• Health Benefits through Carefirst BCBS (Blue Cross Blue Shield)\n• Company paid Life Insurance\n\nPlease respond with your resume. US Citizens and all other parties authorized to work in the US are encouraged to apply.\n\nJob Type: Contract\n\nSalary: $80,000.00 /year\n\nRequired education:\n• Bachelor's\n\nRequired experience:\n• Developer: 5-12year",
+        "job_is_remote": false,
+        "job_posted_at_timestamp": 1713759900,
+        "job_posted_at_datetime_utc": "2024-04-22T04:25:00.000Z",
+        "job_city": "Texas City",
+        "job_state": "TX",
+        "job_country": "US",
+        "job_latitude": 29.383844,
+        "job_longitude": -94.9027,
+        "job_benefits": [
+          "retirement_savings",
+          "dental_coverage",
+          "health_insurance"
+        ],
+        "job_google_link": "https://www.google.com/search?gl=us&hl=en&rciv=jb&q=python+developer+in+texas,+usa&start=0&ibp=htl;jobs#fpstate=tldetail&htivrt=jobs&htiq=python+developer+in+texas,+usa&htidocid=zUu7xQGsS73G02pLAAAAAA%3D%3D",
+        "job_offer_expiration_datetime_utc": "2024-05-22T00:00:00.000Z",
+        "job_offer_expiration_timestamp": 1716336000,
+        "job_required_experience": {
+          "no_experience_required": false,
+          "required_experience_in_months": 60,
+          "experience_mentioned": true,
+          "experience_preferred": false
+        },
+        "job_required_skills": null,
+        "job_required_education": {
+          "postgraduate_degree": false,
+          "professional_certification": false,
+          "high_school": false,
+          "associates_degree": false,
+          "bachelors_degree": false,
+          "degree_mentioned": true,
+          "degree_preferred": false,
+          "professional_certification_mentioned": false
+        },
+        "job_experience_in_place_of_education": false,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_currency": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "Python will be the primary language, using which developer would perform SQL/CRUD operations in DB, file extraction/transformation/generation (CSV, XML, JSON, PDF), email integration",
+            "Excellent communication skills (written and verbal), interpersonal skills, as well as outstanding organizational skills",
+            "Ability to work well under pressure in high stress situations with a calm demeanor",
+            "Bachelor's",
+            "Developer: 5-12year"
+          ],
+          "Benefits": [
+            "Starting salary between $ 60,000 with regular increments",
+            "Free classroom skill enhancement program",
+            "Relocation allowance",
+            "Referral bonus",
+            "On the job support from experienced professionals in the relative field",
+            "Travel allowance",
+            "Insurance- Medical, dental, vision and 401K",
+            "Health Benefits through Carefirst BCBS (Blue Cross Blue Shield)",
+            "Company paid Life Insurance",
+            "Salary: $80,000.00 /year"
+          ]
+        },
+        "job_job_title": null,
+        "job_posting_language": "en",
+        "job_onet_soc": "15113200",
+        "job_onet_job_zone": "4",
+        "job_occupational_categories": [
+          "15-1132.00: Software Developers, Applications"
+        ],
+        "job_naics_code": null,
+        "job_naics_name": null
+      },
+      {
+        "job_id": "eCSKQ5-IT1RJMSNoAAAAAA==",
+        "employer_name": "CEDENT",
+        "employer_logo": null,
+        "employer_website": null,
+        "employer_company_type": null,
+        "job_publisher": "ZipRecruiter",
+        "job_employment_type": "CONTRACTOR",
+        "job_title": "Python Developer (Dallas, TX; )",
+        "job_apply_link": "https://www.ziprecruiter.com/c/CEDENT/Job/Python-Developer-(Dallas,-TX;-)/-in-Dallas,TX?jid=14d39c27b3c7ae41",
+        "job_apply_is_direct": false,
+        "job_apply_quality_score": 0.6639,
+        "apply_options": [
+          {
+            "publisher": "ZipRecruiter",
+            "apply_link": "https://www.ziprecruiter.com/c/CEDENT/Job/Python-Developer-(Dallas,-TX;-)/-in-Dallas,TX?jid=14d39c27b3c7ae41",
+            "is_direct": false
+          }
+        ],
+        "job_description": "MUST HAVE: Python developer, C# ,Informatica, SQL, Snowflake, python They will be evaluating a given product, a SAS product or it can be an AWS product, and they are evaluating to see if the product is good enough to have the organization use it. They support the architect team in evaluating products on the application side. Role Description The team is hiring a Lead Developer and you will be responsible for working with Architecture, Data Governance and Business Intelligence teams to support Fidelity's or vendor Data Management tools and evaluate new technologies.\n\nYou will possess a passion for continuous learning and upskilling in new technologies and a flair for exploring. Required Qualifications ETL developer with Informatica. Web API Microservices and console applications using .Net Framework.\n\nCI/CD pipeline on AWS utilizing AWS Code Commit, AWS Code Build, AWS Code Deploy and AWS Code Pipeline. Jira Rest API integration and used Next JS Strong SQL, PostgreSQL - Snowflake and SQL Server will be a huge plus Strong Analysis skills Working knowledge of Unix OS /Shell scripting Basic Python knowledge is required Good working knowledge of Control-M/Automation tools. Some experience in DevOps Production Support will be required - one week every 3 months Excellent interpersonal and communication skills Excellent collaboration skills to work with multiple teams in the organization.\n\nWorked on NetSuite ERP system for setting up data transfer and invoice generation using SOAP Web Services. Additional Experience Experience with Metadata management solutions / Data lineage is a plus Learn New technologies and evaluate new products, participating in Proof of Concepts (POCs) is a plus Vendor management is a plus Some QA/Testing experience is a plus Some Kubernetes / Docker experience is a plus Strong communication and presentation skills Department: Preferred Vendors This is a contract position",
+        "job_is_remote": false,
+        "job_posted_at_timestamp": 1713860640,
+        "job_posted_at_datetime_utc": "2024-04-23T08:24:00.000Z",
+        "job_city": "Dallas",
+        "job_state": "TX",
+        "job_country": "US",
+        "job_latitude": 32.776665,
+        "job_longitude": -96.79699,
+        "job_benefits": null,
+        "job_google_link": "https://www.google.com/search?gl=us&hl=en&rciv=jb&q=python+developer+in+texas,+usa&start=0&ibp=htl;jobs#fpstate=tldetail&htivrt=jobs&htiq=python+developer+in+texas,+usa&htidocid=eCSKQ5-IT1RJMSNoAAAAAA%3D%3D",
+        "job_offer_expiration_datetime_utc": "2024-05-23T00:00:00.000Z",
+        "job_offer_expiration_timestamp": 1716422400,
+        "job_required_experience": {
+          "no_experience_required": false,
+          "required_experience_in_months": null,
+          "experience_mentioned": true,
+          "experience_preferred": true
+        },
+        "job_required_skills": null,
+        "job_required_education": {
+          "postgraduate_degree": false,
+          "professional_certification": false,
+          "high_school": false,
+          "associates_degree": false,
+          "bachelors_degree": false,
+          "degree_mentioned": false,
+          "degree_preferred": false,
+          "professional_certification_mentioned": false
+        },
+        "job_experience_in_place_of_education": false,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_currency": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "Required Qualifications ETL developer with Informatica",
+            "Web API Microservices and console applications using .Net Framework",
+            "CI/CD pipeline on AWS utilizing AWS Code Commit, AWS Code Build, AWS Code Deploy and AWS Code Pipeline",
+            "Jira Rest API integration and used Next JS Strong SQL, PostgreSQL - Snowflake and SQL Server will be a huge plus Strong Analysis skills Working knowledge of Unix OS /Shell scripting Basic Python knowledge is required Good working knowledge of Control-M/Automation tools",
+            "Some experience in DevOps Production Support will be required - one week every 3 months Excellent interpersonal and communication skills Excellent collaboration skills to work with multiple teams in the organization",
+            "Worked on NetSuite ERP system for setting up data transfer and invoice generation using SOAP Web Services"
+          ],
+          "Responsibilities": [
+            "MUST HAVE: Python developer, C# ,Informatica, SQL, Snowflake, python They will be evaluating a given product, a SAS product or it can be an AWS product, and they are evaluating to see if the product is good enough to have the organization use it",
+            "They support the architect team in evaluating products on the application side",
+            "Role Description The team is hiring a Lead Developer and you will be responsible for working with Architecture, Data Governance and Business Intelligence teams to support Fidelity's or vendor Data Management tools and evaluate new technologies",
+            "You will possess a passion for continuous learning and upskilling in new technologies and a flair for exploring"
+          ]
+        },
+        "job_job_title": null,
+        "job_posting_language": "en",
+        "job_onet_soc": "15113200",
+        "job_onet_job_zone": "4",
+        "job_occupational_categories": [
+          "15-1132.00: Software Developers, Applications"
+        ],
+        "job_naics_code": null,
+        "job_naics_name": null
+      },
+      {
+        "job_id": "YvdpgQjWGDbinEOyAAAAAA==",
+        "employer_name": "Extend Information Systems Inc.",
+        "employer_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpOSK255X2-kDEDQwIAhqbXdSrPX_29Xs4WaYT&s=0",
+        "employer_website": null,
+        "employer_company_type": null,
+        "job_publisher": "LinkedIn",
+        "job_employment_type": "FULLTIME",
+        "job_title": "Looking for python Developer -Houston,TX- Full-time",
+        "job_apply_link": "https://www.linkedin.com/jobs/view/looking-for-python-developer-houston-tx-full-time-at-extend-information-systems-inc-3888434864",
+        "job_apply_is_direct": false,
+        "job_apply_quality_score": 0.7333,
+        "apply_options": [
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/looking-for-python-developer-houston-tx-full-time-at-extend-information-systems-inc-3888434864",
+            "is_direct": false
+          },
+          {
+            "publisher": "ZipRecruiter",
+            "apply_link": "https://www.ziprecruiter.com/c/Release-Manger-Project-Manager-The-Dignify-Solutions/Job/Python-Developer-Houston,-TX/-in-Houston,TX?jid=9b289debd6bcc216",
+            "is_direct": false
+          },
+          {
+            "publisher": "Jooble",
+            "apply_link": "https://jooble.org/jdp/861672496649938105",
+            "is_direct": false
+          }
+        ],
+        "job_description": "Hi, Jobseekers,\n\nI hope you are doing well!\n\nWe have an opportunity for Python Developer with one of our clients for Houston, TX.\n\nPlease see the job details below and let me know if you would be interested in this role.\n\nIf interested, please send me a copy of your resume, contact details, availability, and a good time to connect with you.\n\nTitle: Python Developer\n\nLocation: Houston, TX\n\nTerms: Full-time\n\nJob Details\n\n5+ years' experience as Python developer.\n\nHands on experience in Django framework.\n\nStrong exposure and development experience using Time series data.\n\nRegression models (simple and more advanced techniques, linear and non-linear),\n\nTime series modelling\n\nStandard array of statistical software packages (Python, R, EViews, SAS)\n\nAzure fundamentals\n\nPower BI foundation level knowledge\n\nThanks & Regards\n\nMonika Singh\n\nExtend Information System Inc\n\nPhone:571-622-3980\n\nEmail: monika@extendinfosys.com\n\n44258 Mercure Circle, UNIT 102 A, Sterling VA, USA 20166",
+        "job_is_remote": false,
+        "job_posted_at_timestamp": 1712657448,
+        "job_posted_at_datetime_utc": "2024-04-09T10:10:48.000Z",
+        "job_city": "Houston",
+        "job_state": "TX",
+        "job_country": "US",
+        "job_latitude": 29.760427,
+        "job_longitude": -95.369804,
+        "job_benefits": null,
+        "job_google_link": "https://www.google.com/search?gl=us&hl=en&rciv=jb&q=python+developer+in+texas,+usa&start=0&ibp=htl;jobs#fpstate=tldetail&htivrt=jobs&htiq=python+developer+in+texas,+usa&htidocid=YvdpgQjWGDbinEOyAAAAAA%3D%3D",
+        "job_offer_expiration_datetime_utc": "2024-05-09T10:10:42.000Z",
+        "job_offer_expiration_timestamp": 1715249442,
+        "job_required_experience": {
+          "no_experience_required": false,
+          "required_experience_in_months": 60,
+          "experience_mentioned": true,
+          "experience_preferred": false
+        },
+        "job_required_skills": null,
+        "job_required_education": {
+          "postgraduate_degree": false,
+          "professional_certification": false,
+          "high_school": false,
+          "associates_degree": false,
+          "bachelors_degree": true,
+          "degree_mentioned": false,
+          "degree_preferred": false,
+          "professional_certification_mentioned": false
+        },
+        "job_experience_in_place_of_education": false,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_currency": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "5+ years' experience as Python developer",
+            "Hands on experience in Django framework",
+            "Strong exposure and development experience using Time series data",
+            "Power BI foundation level knowledge"
+          ]
+        },
+        "job_job_title": null,
+        "job_posting_language": "en",
+        "job_onet_soc": "15113200",
+        "job_onet_job_zone": "4",
+        "job_occupational_categories": null,
+        "job_naics_code": null,
+        "job_naics_name": null
+      },
+      {
+        "job_id": "jOCI5XgDPQloqgLyAAAAAA==",
+        "employer_name": "Wise Skulls",
+        "employer_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYqsrQ2ibAYR71EZHt34pbrd4ySfLkDryEbNXs&s=0",
+        "employer_website": null,
+        "employer_company_type": null,
+        "job_publisher": "LinkedIn",
+        "job_employment_type": "FULLTIME",
+        "job_title": "Python Developer",
+        "job_apply_link": "https://www.linkedin.com/jobs/view/python-developer-at-wise-skulls-3888451316",
+        "job_apply_is_direct": false,
+        "job_apply_quality_score": 0.632,
+        "apply_options": [
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/python-developer-at-wise-skulls-3888451316",
+            "is_direct": false
+          }
+        ],
+        "job_description": "Title:Python Developer\n\nLocation: Dallas TX (Remote till Mid of January)\n\nDuration: 6+ Months (Possibility of Extension)\n\nImplementation Partner: Infosys\n\nEnd Client: To be Disclosed\n\nJD\n\nMinimum years of experience 6+ Years\n\nStrong Hands-on experience in SQL , Python and Teradata.",
+        "job_is_remote": false,
+        "job_posted_at_timestamp": 1712657566,
+        "job_posted_at_datetime_utc": "2024-04-09T10:12:46.000Z",
+        "job_city": "Dallas",
+        "job_state": "TX",
+        "job_country": "US",
+        "job_latitude": 32.776665,
+        "job_longitude": -96.79699,
+        "job_benefits": null,
+        "job_google_link": "https://www.google.com/search?gl=us&hl=en&rciv=jb&q=python+developer+in+texas,+usa&start=0&ibp=htl;jobs#fpstate=tldetail&htivrt=jobs&htiq=python+developer+in+texas,+usa&htidocid=jOCI5XgDPQloqgLyAAAAAA%3D%3D",
+        "job_offer_expiration_datetime_utc": "2024-05-09T10:12:40.000Z",
+        "job_offer_expiration_timestamp": 1715249560,
+        "job_required_experience": {
+          "no_experience_required": false,
+          "required_experience_in_months": 72,
+          "experience_mentioned": true,
+          "experience_preferred": false
+        },
+        "job_required_skills": null,
+        "job_required_education": {
+          "postgraduate_degree": false,
+          "professional_certification": false,
+          "high_school": false,
+          "associates_degree": false,
+          "bachelors_degree": true,
+          "degree_mentioned": false,
+          "degree_preferred": false,
+          "professional_certification_mentioned": false
+        },
+        "job_experience_in_place_of_education": false,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_currency": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "Minimum years of experience 6+ Years",
+            "Strong Hands-on experience in SQL , Python and Teradata"
+          ]
+        },
+        "job_job_title": null,
+        "job_posting_language": "en",
+        "job_onet_soc": "15113200",
+        "job_onet_job_zone": "4",
+        "job_occupational_categories": null,
+        "job_naics_code": null,
+        "job_naics_name": null
+      },
+      {
+        "job_id": "uscCnT7d6yUB4JniAAAAAA==",
+        "employer_name": "Amazee Global Ventures Inc",
+        "employer_logo": null,
+        "employer_website": null,
+        "employer_company_type": null,
+        "job_publisher": "Indeed",
+        "job_employment_type": "FULLTIME",
+        "job_title": "W2 ONLY - Senior Python Developer",
+        "job_apply_link": "https://www.indeed.com/viewjob?jk=7cced2eb89297e02",
+        "job_apply_is_direct": true,
+        "job_apply_quality_score": 0.6273,
+        "apply_options": [
+          {
+            "publisher": "Indeed",
+            "apply_link": "https://www.indeed.com/viewjob?jk=7cced2eb89297e02",
+            "is_direct": true
+          },
+          {
+            "publisher": "Glassdoor",
+            "apply_link": "https://www.glassdoor.com/job-listing/w2-only-senior-python-developer-amazee-global-ventures-inc-JV_IC1140045_KO0,31_KE32,58.htm?jl=1009247874335",
+            "is_direct": true
+          },
+          {
+            "publisher": "SimplyHired",
+            "apply_link": "https://www.simplyhired.com/job/YZuPaTLKP-1gMgxeAAxNoD8dgl_E-8fa4wA7I2la9jfm5TmVWAJFOw",
+            "is_direct": false
+          }
+        ],
+        "job_description": "Job Description:\n\nThis is the Full-Time/ Contract W2 opportunity with Amazee Global Ventures Inc.\n\nWe welcome all qualified applicants.\n\nTitle: Senior Python Developer\nLocation: Plano, TX\nDuration: Long term\nPay Rate Range: $55-$60/HR ON W2.\n\nExperience- 15+ years.\n\nJob Description:\n\nResponsible for crafting and delivering sophisticated software solutions to meet organizational objectives. Ensures software development aligns with functional, non-functional, and regulatory requirements. Develops code, conducts unit tests, and integrates solutions seamlessly within the larger application/system with robust, clearly defined interfaces. Plays a pivotal role in refining user stories and defining requirements, guiding the team in estimating workload throughout the delivery process. Provides technical expertise to address complexities in story implementation. Enhances existing test suites (integration, regression, performance), analyzes test reports, and rectifies any identified issues/errors by identifying root causes. Documents and communicates crucial information for deployment, maintenance, support, and business operations.\n\nRequired Skills:\n\n- Extensive Python programming expertise exceeding 15 years.\n\n- Thorough understanding of Python libraries such as Pandas and NumPy.\n\n- Proficiency with frameworks like Django, Flask, or similar web frameworks.\n\n- Competence in a UI library or Framework such as React, Angular, or Vue (Preference for React).\n\n- Solid grasp of Data structures and Collections.\n\n- Experience with both Relational (MySQL, Postgres) and NoSQL (Cassandra, MongoDB) database technologies.\n\n- Expertise in designing and constructing distributed and scalable systems leveraging OOPS and/or Functional programming paradigms.\n\n- Understanding of Distributed Computing and High-Velocity data processing.\n\n- Exposure to CI/CD tools like Jenkins, Maven, Git, etc.\n\n- Knowledge of Software engineering design patterns and best practices.\n\n- Strong analytical and problem-solving skills.\n\nAmazee Global Ventures Inc, is an equal opportunity employer. We will not discriminate and will follow all measures to ensure no discrimination in employment, recruitment, advertisements for employment, compensation, termination, upgrading, promotions, and other conditions of employment against any employee or job applicant on the bases of race, color, gender, national origin, age, religion, creed, disability, veteran's status, sexual orientation, gender identity or gender expression. We are committed to providing an inclusive and welcoming environment for all members of our staff, clients, volunteers, subcontractors, vendors, and clients.\n\nJob Types: Full-time, Contract\n\nPay: $55.00 - $60.00 per hour\n\nExperience level:\n• 11+ years\n\nExperience:\n• REST: 1 year (Preferred)\n• Java: 1 year (Preferred)\n\nAbility to Relocate:\n• Plano, TX: Relocate before starting work (Required)\n\nWork Location: On the road",
+        "job_is_remote": false,
+        "job_posted_at_timestamp": 1713792899,
+        "job_posted_at_datetime_utc": "2024-04-22T13:34:59.000Z",
+        "job_city": "Plano",
+        "job_state": "TX",
+        "job_country": "US",
+        "job_latitude": 33.019844,
+        "job_longitude": -96.69888,
+        "job_benefits": null,
+        "job_google_link": "https://www.google.com/search?gl=us&hl=en&rciv=jb&q=python+developer+in+texas,+usa&start=0&ibp=htl;jobs#fpstate=tldetail&htivrt=jobs&htiq=python+developer+in+texas,+usa&htidocid=uscCnT7d6yUB4JniAAAAAA%3D%3D",
+        "job_offer_expiration_datetime_utc": "2024-08-20T14:07:24.000Z",
+        "job_offer_expiration_timestamp": 1724162844,
+        "job_required_experience": {
+          "no_experience_required": false,
+          "required_experience_in_months": 132,
+          "experience_mentioned": true,
+          "experience_preferred": false
+        },
+        "job_required_skills": null,
+        "job_required_education": {
+          "postgraduate_degree": false,
+          "professional_certification": false,
+          "high_school": false,
+          "associates_degree": false,
+          "bachelors_degree": false,
+          "degree_mentioned": false,
+          "degree_preferred": false,
+          "professional_certification_mentioned": false
+        },
+        "job_experience_in_place_of_education": false,
+        "job_min_salary": 55,
+        "job_max_salary": 60,
+        "job_salary_currency": "USD",
+        "job_salary_period": "HOUR",
+        "job_highlights": {
+          "Qualifications": [
+            "Experience- 15+ years",
+            "Extensive Python programming expertise exceeding 15 years",
+            "Thorough understanding of Python libraries such as Pandas and NumPy",
+            "Proficiency with frameworks like Django, Flask, or similar web frameworks",
+            "Competence in a UI library or Framework such as React, Angular, or Vue (Preference for React)",
+            "Solid grasp of Data structures and Collections",
+            "Experience with both Relational (MySQL, Postgres) and NoSQL (Cassandra, MongoDB) database technologies",
+            "Expertise in designing and constructing distributed and scalable systems leveraging OOPS and/or Functional programming paradigms",
+            "Understanding of Distributed Computing and High-Velocity data processing",
+            "Exposure to CI/CD tools like Jenkins, Maven, Git, etc",
+            "Knowledge of Software engineering design patterns and best practices",
+            "Strong analytical and problem-solving skills",
+            "11+ years",
+            "Plano, TX: Relocate before starting work (Required)"
+          ],
+          "Responsibilities": [
+            "Responsible for crafting and delivering sophisticated software solutions to meet organizational objectives",
+            "Ensures software development aligns with functional, non-functional, and regulatory requirements",
+            "Develops code, conducts unit tests, and integrates solutions seamlessly within the larger application/system with robust, clearly defined interfaces",
+            "Plays a pivotal role in refining user stories and defining requirements, guiding the team in estimating workload throughout the delivery process",
+            "Provides technical expertise to address complexities in story implementation",
+            "Enhances existing test suites (integration, regression, performance), analyzes test reports, and rectifies any identified issues/errors by identifying root causes",
+            "Documents and communicates crucial information for deployment, maintenance, support, and business operations"
+          ],
+          "Benefits": [
+            "Pay Rate Range: $55-$60/HR ON W2",
+            "Pay: $55.00 - $60.00 per hour"
+          ]
+        },
+        "job_job_title": null,
+        "job_posting_language": "en",
+        "job_onet_soc": "15113200",
+        "job_onet_job_zone": "4",
+        "job_occupational_categories": null,
+        "job_naics_code": null,
+        "job_naics_name": null
+      },
+      {
+        "job_id": "7oKm_SkxjLxpFtVuAAAAAA==",
+        "employer_name": "SynergisticIT",
+        "employer_logo": null,
+        "employer_website": null,
+        "employer_company_type": null,
+        "job_publisher": "ZipRecruiter",
+        "job_employment_type": "FULLTIME",
+        "job_title": "PYTHON DEVELOPER(ENTRY LEVEL)",
+        "job_apply_link": "https://www.ziprecruiter.com/c/SynergisticIT/Job/PYTHON-DEVELOPER(ENTRY-LEVEL)/-in-Austin,TX?jid=95b95b82c4f3b4bd",
+        "job_apply_is_direct": false,
+        "job_apply_quality_score": 0.5763,
+        "apply_options": [
+          {
+            "publisher": "ZipRecruiter",
+            "apply_link": "https://www.ziprecruiter.com/c/SynergisticIT/Job/PYTHON-DEVELOPER(ENTRY-LEVEL)/-in-Austin,TX?jid=95b95b82c4f3b4bd",
+            "is_direct": false
+          }
+        ],
+        "job_description": "SynergisticIT is committed to fast track your career by increasing your career prospects. We provide a broad spectrum of career advancement solutions. Whether you are struggling to find a job or hustling to get noticed by the hiring managers, we can help you stand out in your professional endeavors.\nTrusted by thousands of tech enthusiasts, SynergisticIT can bridge your skill and knowledge gap to make you competent for high-tech jobs. Our invaluable business acumen helps us assist thriving job seekers in achieving their career goals.\nCurrently, we are looking for adept entry-level Python Developers to work with our elite group of clients, namely Client, PayPal, Expedia Group, Google, Apple, Cognizant, Ford, Cisco, Walmart Labs, etc.\n\nRequired Qualifications and Background\n• Bachelor's degree or Master's degree in Computer Science, Electrical Engineering, Computer Engineering, Information Systems, IT, Mathematics,\n• Mathematics or Statistics background\nSkills Required\n• 0 to 2 years of experience in Python development\n• Deep understanding of the software development life cycle\n• Knowledge of Linear Algebra, Statistics, and Mathematics concepts\n• Excellent written and verbal communication skills\n• Technically inquisitive, self-learner, team player, and highly motivated\n• Strong work ethics and creative problem-solving abilities\n\nPreferred Skills\n• Deep Learning\n• Data visualization\n• Scala\n• NLP\n• Django\n• Roles and Responsibilities\nAs an entry-level Python Developer, you need to perform the following duties:\n• Write server-side web application logic\n• Write scalable and effective codes in Python\n• Develop backend components to boost overall application's performance\n• Executing tests and fixing bugs in applications and software\n• Implement data protection and security solutions\n• Connect applications with third-party web services\n• Support frontend developers by integrating UI elements into Python applications\n\nBenefits\n• Competitive salary\n• Flexible work schedule & part-time off\n• E-verified\n• H1B Filing\n• No relocation\n• On job technical support\n• Skill Enhancement\n• Opportunity to work with Fortune 500 Companies\n\nWho can apply?\nThis job opportunity is best suited for recent IT graduates who want to make a mark in the tech industry and upskill their IT talent. Anyone with a basic knowledge of Python programming or having some experience in building Python software solutions can apply for this position.\nNo third-party candidates or c2c candidates\n\nIf you are interested, please apply to the posting.\n\nNo phone calls please, Shortlisted candidates would be reached out.",
+        "job_is_remote": false,
+        "job_posted_at_timestamp": 1627023600,
+        "job_posted_at_datetime_utc": "2021-07-23T07:00:00.000Z",
+        "job_city": "Austin",
+        "job_state": "TX",
+        "job_country": "US",
+        "job_latitude": 30.267153,
+        "job_longitude": -97.74306,
+        "job_benefits": null,
+        "job_google_link": "https://www.google.com/search?gl=us&hl=en&rciv=jb&q=python+developer+in+texas,+usa&start=0&ibp=htl;jobs#fpstate=tldetail&htivrt=jobs&htiq=python+developer+in+texas,+usa&htidocid=7oKm_SkxjLxpFtVuAAAAAA%3D%3D",
+        "job_offer_expiration_datetime_utc": "2024-05-21T00:00:00.000Z",
+        "job_offer_expiration_timestamp": 1716249600,
+        "job_required_experience": {
+          "no_experience_required": false,
+          "required_experience_in_months": null,
+          "experience_mentioned": true,
+          "experience_preferred": false
+        },
+        "job_required_skills": null,
+        "job_required_education": {
+          "postgraduate_degree": false,
+          "professional_certification": false,
+          "high_school": false,
+          "associates_degree": false,
+          "bachelors_degree": false,
+          "degree_mentioned": true,
+          "degree_preferred": true,
+          "professional_certification_mentioned": false
+        },
+        "job_experience_in_place_of_education": false,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_currency": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "Bachelor's degree or Master's degree in Computer Science, Electrical Engineering, Computer Engineering, Information Systems, IT, Mathematics,",
+            "Mathematics or Statistics background",
+            "0 to 2 years of experience in Python development",
+            "Deep understanding of the software development life cycle",
+            "Knowledge of Linear Algebra, Statistics, and Mathematics concepts",
+            "Excellent written and verbal communication skills",
+            "Technically inquisitive, self-learner, team player, and highly motivated",
+            "Strong work ethics and creative problem-solving abilities",
+            "Support frontend developers by integrating UI elements into Python applications"
+          ],
+          "Responsibilities": [
+            "As an entry-level Python Developer, you need to perform the following duties:",
+            "Write server-side web application logic",
+            "Write scalable and effective codes in Python",
+            "Develop backend components to boost overall application's performance",
+            "Executing tests and fixing bugs in applications and software",
+            "Implement data protection and security solutions",
+            "Connect applications with third-party web services"
+          ],
+          "Benefits": [
+            "Competitive salary",
+            "Flexible work schedule & part-time off",
+            "No relocation",
+            "On job technical support",
+            "Opportunity to work with Fortune 500 Companies"
+          ]
+        },
+        "job_job_title": null,
+        "job_posting_language": "en",
+        "job_onet_soc": "15113200",
+        "job_onet_job_zone": "4",
+        "job_occupational_categories": [
+          "15-1132.00: Software Developers, Applications"
+        ],
+        "job_naics_code": null,
+        "job_naics_name": null
+      },
+      {
+        "job_id": "EkeDh-ek5YsQ0Pq4AAAAAA==",
+        "employer_name": "Photon",
+        "employer_logo": "https://www.photon.com/themes/custom/photon/images/logo_photon.svg",
+        "employer_website": "http://www.photon.in",
+        "employer_company_type": null,
+        "job_publisher": "LinkedIn",
+        "job_employment_type": "FULLTIME",
+        "job_title": "Python Developer",
+        "job_apply_link": "https://www.linkedin.com/jobs/view/python-developer-at-photon-3899573972",
+        "job_apply_is_direct": false,
+        "job_apply_quality_score": 0.6246,
+        "apply_options": [
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/python-developer-at-photon-3899573972",
+            "is_direct": false
+          }
+        ],
+        "job_description": "Greetings from Photon, we are looking for a Python Developer with some Java experience for one of our critical projects in Dallas, TX.\n\nPlease have a look at the JD and share your resume with me at amit.chauhan@photon.com.\n\nRole : Python Developer (Only FTE/W2)\n\nLocation : Dallas, TX\n\nPython Developer Responsibilities:\n• Coordinating with development teams to determine application requirements.\n• Writing scalable code using Python programming language.\n• Testing and debugging applications.\n• Developing back-end components.\n• Integrating user-facing elements using server-side logic.\n• Assessing and prioritizing client feature requests.\n• Integrating data storage solutions.\n• Coordinating with front-end developers.\n\nRequirements:\n• Bachelor's degree in computer science, computer engineering, or related field.\n• 7+ years of experience as a Python developer.\n• Knowledge of middleware Java stack, messaging technologies, containerization, web containers and test automation.\n• Expert knowledge of Python and related frameworks including Django and Flask.\n• A deep understanding and multi-process architecture and the threading limitations of Python.\n• Familiarity with server-side templating languages including Jinja 2 and Mako.\n• Ability to integrate multiple data sources into a single system.\n• Ability to collaborate on projects and work independently when required.\n• Expert-level development skills in Python\n• Expertise in different database technologies like Snowflake & NoSQL databases like MongoDB, DynamoDB\n• Demonstrated Experience coding in more than one programming language. Our full stack engineers work across a range of client, middle tier, messaging, caching and database technologies including Java, Python, TypeScript, JavaScript, SQL and PL/SQL\n• Experience with quant research processes, methodologies, and tools a plus.\n• Experience with Financial Datasets a plus.",
+        "job_is_remote": false,
+        "job_posted_at_timestamp": 1713287824,
+        "job_posted_at_datetime_utc": "2024-04-16T17:17:04.000Z",
+        "job_city": "Dallas",
+        "job_state": "TX",
+        "job_country": "US",
+        "job_latitude": 32.776665,
+        "job_longitude": -96.79699,
+        "job_benefits": null,
+        "job_google_link": "https://www.google.com/search?gl=us&hl=en&rciv=jb&q=python+developer+in+texas,+usa&start=0&ibp=htl;jobs#fpstate=tldetail&htivrt=jobs&htiq=python+developer+in+texas,+usa&htidocid=EkeDh-ek5YsQ0Pq4AAAAAA%3D%3D",
+        "job_offer_expiration_datetime_utc": "2024-05-16T17:17:03.000Z",
+        "job_offer_expiration_timestamp": 1715879823,
+        "job_required_experience": {
+          "no_experience_required": false,
+          "required_experience_in_months": 84,
+          "experience_mentioned": true,
+          "experience_preferred": true
+        },
+        "job_required_skills": null,
+        "job_required_education": {
+          "postgraduate_degree": false,
+          "professional_certification": false,
+          "high_school": false,
+          "associates_degree": false,
+          "bachelors_degree": true,
+          "degree_mentioned": true,
+          "degree_preferred": true,
+          "professional_certification_mentioned": false
+        },
+        "job_experience_in_place_of_education": false,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_currency": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "Bachelor's degree in computer science, computer engineering, or related field",
+            "7+ years of experience as a Python developer",
+            "Knowledge of middleware Java stack, messaging technologies, containerization, web containers and test automation",
+            "Expert knowledge of Python and related frameworks including Django and Flask",
+            "A deep understanding and multi-process architecture and the threading limitations of Python",
+            "Familiarity with server-side templating languages including Jinja 2 and Mako",
+            "Ability to integrate multiple data sources into a single system",
+            "Ability to collaborate on projects and work independently when required",
+            "Expert-level development skills in Python",
+            "Expertise in different database technologies like Snowflake & NoSQL databases like MongoDB, DynamoDB",
+            "Demonstrated Experience coding in more than one programming language",
+            "Our full stack engineers work across a range of client, middle tier, messaging, caching and database technologies including Java, Python, TypeScript, JavaScript, SQL and PL/SQL"
+          ],
+          "Responsibilities": [
+            "Coordinating with development teams to determine application requirements",
+            "Writing scalable code using Python programming language",
+            "Testing and debugging applications",
+            "Developing back-end components",
+            "Integrating user-facing elements using server-side logic",
+            "Assessing and prioritizing client feature requests",
+            "Integrating data storage solutions",
+            "Coordinating with front-end developers"
+          ]
+        },
+        "job_job_title": null,
+        "job_posting_language": "en",
+        "job_onet_soc": "15113200",
+        "job_onet_job_zone": "4",
+        "job_occupational_categories": null,
+        "job_naics_code": null,
+        "job_naics_name": null
+      }
+    ]
+  }

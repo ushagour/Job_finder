@@ -17,6 +17,7 @@ import {
   Specifics,
 } from "../../components";
 import { COLORS, icons, SIZES } from "../../constants";
+import useFetchLocal from "../../hook/useFetchLocal";
 import useFetch from "../../hook/useFetch";
 import { Stack,router } from "expo-router";
 import { useRoute } from '@react-navigation/native';
@@ -33,12 +34,15 @@ const JobDetails = () => {
   
 
 
-    const [activeTab,setActiveTab]=useState(tabs[0])
   
-
-    const { data, isLoading, error, refetch } = useFetch("job-details", {
-      job_id:id,
-    });
+  
+  const { data, isLoading, error } = useFetchLocal('endpoint', {}, id);
+  // console.log("com"+data[0]);
+  // console.log(data[0].job_id);
+  // const { data, isLoading, error, refetch } = useFetch("job-details", {
+    //   job_id:id,
+    // });
+    const [activeTab,setActiveTab]=useState(tabs[0])
 
     const handleShare = async () => {
       try {
@@ -126,9 +130,12 @@ const JobDetails = () => {
                     isLoading ? (
                         <ActivityIndicator size='large' color={COLORS.primary} />
                     ) : error ? (
-                        <Text>Something went wrong</Text>
-                    ) : data.length === 0 ? (
-                        <Text>No data available</Text>
+                        <Text>
+
+                          {error.message}
+                        </Text>
+                    ) :  data.length === 0  ? (
+                        <Text>No data available  </Text>
                     ) : (
                         <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
                         <Company
