@@ -12,6 +12,7 @@ import styles from "./nearbyjobs.style";
 import { COLORS, SIZES } from "../../../constants";
 import NearbyjobCard from "../../common/cards/nearby/NearbyJobCard";
 import useFetch from "../../../hook/useFetch";
+import useFetchLocal from "../../../hook/useFetchLocal";
 import { useCallback,useEffect, useState } from "react";
 import { addDoc, collection,doc, getDoc, getFirestore, setDoc } from 'firebase/firestore';
 // import { app, auth } from '../../../firebase/config';
@@ -22,14 +23,15 @@ import { addDoc, collection,doc, getDoc, getFirestore, setDoc } from 'firebase/f
 const Nearbyjobs = (props) => {
   const router = useRouter();
   // Initialize likedJobs as an object with job_id as keys
+  
+  const { data, isLoading, error } = useFetchLocal('all', {});
 
-
-  const { data, isLoading, error } = useFetch("search", {
-    query: `NearBay jobs for software developers in ${props.city}`,
-    num_pages: "1",
-    radius: '1',
-  });
-
+  // const { data, isLoading, error } = useFetch("search", {
+  //   query: `NearBay jobs for software developers in ${props.city}`,
+  //   num_pages: "1",
+  //   radius: '1',
+  // });
+  
 
 
   

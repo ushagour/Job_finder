@@ -36,7 +36,7 @@ const JobDetails = () => {
 
   
   
-  const { data, isLoading, error } = useFetchLocal('endpoint', {}, id);
+  const { data, isLoading, error } = useFetchLocal('detail', {}, id);
   // console.log("com"+data[0]);
   // console.log(data[0].job_id);
   // const { data, isLoading, error, refetch } = useFetch("job-details", {

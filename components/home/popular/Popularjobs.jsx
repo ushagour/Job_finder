@@ -12,15 +12,17 @@ import styles from "./popularjobs.style";
 import { COLORS, SIZES } from "../../../constants";
 import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 import useFetch from "../../../hook/useFetch";
+import useFetchLocal from "../../../hook/useFetchLocal";
 
 const Popularjobs = (props) => {
   const router = useRouter();
 
+  const { data, isLoading, error } = useFetchLocal('all', {});
 
-  const { data, isLoading, error } = useFetch("search", {
-    query: `popular software developers in ${props.country}`,
-    page: '1',
-  });
+  // const { data, isLoading, error } = useFetch("search", {
+  //   query: `popular software developers in ${props.country}`,
+  //   page: '1',
+  // });
 
 
 
