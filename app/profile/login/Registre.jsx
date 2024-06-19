@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, KeyboardAvoidingView, View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
+import { SafeAreaView, KeyboardAvoidingView, View, Text, TextInput, TouchableOpacity, Image,Alert } from 'react-native';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword,getAuth } from 'firebase/auth';
 import { COLORS, images } from '../../../constants';
@@ -19,22 +19,20 @@ const Register = () => {
     try {
       // Validate inputs
       if (!email || !name || !password || !confirmPassword) {
-        setError('All fields are required');
-        return;
+        throw new Error('All fields are required');
       }
-
+  
       if (password !== confirmPassword) {
-        setError('Passwords do not match');
-        return;
+        throw new Error('Passwords do not match');//to generate the error 
       }
-
+  
       const firestore = getFirestore(app);
       const auth = getAuth(app);
-
+  
       // Create user in Firebase Authentication
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-
+  
       // Store user data in Firestore
       const usersCollection = collection(firestore, 'users');
       await addDoc(usersCollection, {
@@ -47,10 +45,36 @@ const Register = () => {
       console.log(`User with UID ${user.uid} registered successfully`);
       router.push(`/profile/profile`);
     } catch (error) {
-      console.error('Error signing up:', error);
-      setError('Error signing up. Please try again.');
+      let errorMessage;
+      switch (error.message) {
+        case 'All fields are required':
+          errorMessage = 'All fields are required';
+          break;
+        case 'Passwords do not match':
+          errorMessage = 'Passwords do not match';
+          break;
+        default:
+          switch (error.code) {
+            case 'auth/user-not-found':
+              errorMessage = 'User not found!';
+              break;
+            case 'auth/invalid-email':
+              errorMessage = 'Invalid email!';
+              break;
+            case 'auth/invalid-credential':
+              errorMessage = 'Invalid credential!';
+              break;
+            case 'auth/too-many-requests':
+              errorMessage = 'Too many requests, try later!';
+              break;
+            default:
+              errorMessage = 'An error occurred!';
+          }
+      }
+      Alert.alert('Error', errorMessage);
     }
   };
+  
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>

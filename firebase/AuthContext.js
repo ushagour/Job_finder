@@ -1,122 +1,119 @@
-// AuthContext.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { auth } from './config'; // Make sure to replace './firebase' with the correct path to your Firebase configuration
-import {  useRouter } from 'expo-router';
-import { getDoc, getFirestore, doc,getDocs,collection,query,where } from 'firebase/firestore';
-import { app } from '../firebase/config';
-
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut as firebaseSignOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getFirestore, doc, setDoc, getDoc, collection, query, where, getDocs } from 'firebase/firestore';
+import { app } from '../firebase/config'; // Adjust the path as needed
+import { useRouter } from 'expo-router';
 
 const AuthContext = createContext();
-const router = useRouter();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [user_loading, set_loading] = useState(true);
-
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
-      // Check if userAuth exists and is not null
+    const auth = getAuth(app);
+    const unsubscribe = onAuthStateChanged(auth, async (userAuth) => {
       if (userAuth) {
-        // If userAuth exists, set the user object to the state
-        // getLikedJobs(userAuth)
-        getUserProfile(userAuth)
-        // set_loading(false)
-
-
-
-
+        await getUserProfile(userAuth);
       }
+      setLoading(false);
     });
-  
-    // Unsubscribe from the auth state listener when the component unmounts
+
     return () => unsubscribe();
-
   }, []);
-  
 
-
-
-
-  const handelLogingGoogle = async () => {
-    try {
-      const { idToken } = await auth().signInWithGoogle();
-      // Send idToken to your server for authentication
-      console.log('Google sign-in successful!');
-
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const signInWithGitHub = async () => {
-    try {
-      const { idToken } = await auth().signInWithGitHubToken('GITHUB_ACCESS_TOKEN');
-      // Send idToken to your server for authentication
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-
-  const signIn = async (email, password) => {
-    try {
-      const userCredential = await auth.signInWithEmailAndPassword(email, password);
-      getUserProfile(userCredential.user)
-      // getLikedJobs(userCredential.user)
-
-    } catch (error) {
-      console.error('Error signing in:', error.message);
-    }
-  };
-
-
-
-
- 
-
- 
   const getUserProfile = async (user) => {
     try {
       const userId = user.uid;
       const firestore = getFirestore(app);
       const usersCollectionRef = collection(firestore, 'users');
       const querySnapshot = await getDocs(query(usersCollectionRef, where('uid', '==', userId)));
-  
+
       if (!querySnapshot.empty) {
-        // Assuming there's only one document with the matching UID
         const userDocSnap = querySnapshot.docs[0];
         const userData = userDocSnap.data();
-        console.log("1"+userData);    
         setUser(userData);
-        set_loading(false)
-
       } else {
         console.log("User profile not found.");
         setUser(null);
-        set_loading(false)
-
       }
     } catch (error) {
       console.error('Error fetching user profile:', error);
-    } 
+    }
   };
-  
 
+  const signIn = async (email, password) => {
+    try {
+      const auth = getAuth(app);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      await getUserProfile(userCredential.user);
+      
+    } catch (error) {
+      console.error('Error signing in:', error.message);
+      throw error;
+    }
+  };
+
+  const register = async (email, password, additionalData) => {
+    try {
+      const auth = getAuth(app);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // Save additional user data to Firestore
+      const firestore = getFirestore(app);
+      await setDoc(doc(firestore, 'users', user.uid), {
+        uid: user.uid,
+        email: user.email,
+        ...additionalData,
+      });
+
+      await getUserProfile(user);
+    } catch (error) {
+      console.error('Error registering user:', error.message);
+      throw error;
+    }
+  };
+
+  const signInWithGoogle = async () => {
+    try {
+      const auth = getAuth(app);
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      await getUserProfile(user);
+    } catch (error) {
+      console.error('Error signing in with Google:', error.message);
+      throw error;
+    }
+  };
+
+  const updateProfile = async (uid, updatedData) => {
+    try {
+      const firestore = getFirestore(app);
+      await setDoc(doc(firestore, 'users', uid), updatedData, { merge: true });
+      await getUserProfile({ uid });
+    } catch (error) {
+      console.error('Error updating profile:', error.message);
+      throw error;
+    }
+  };
 
   const signOut = async () => {
     try {
-      await auth.signOut();
-      router.push(`/profile/login/Login`);
+      const auth = getAuth(app);
+      await firebaseSignOut(auth);
       setUser(null);
-      
+      router.push(`/profile/login/Login`);
     } catch (error) {
       console.error('Error signing out:', error.message);
+      throw error;
     }
   };
 
   return (
-    <AuthContext.Provider value={{ user, signIn, signOut,handelLogingGoogle,user_loading}}>
+    <AuthContext.Provider value={{ user, loading, signIn, register, signInWithGoogle, updateProfile, signOut }}>
       {children}
     </AuthContext.Provider>
   );

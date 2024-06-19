@@ -50,8 +50,8 @@ function RootLayoutNav() {
   
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <AuthProvider>
+      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
           <LocationProvider>
 
           <LikedJobProvider>
@@ -62,8 +62,8 @@ function RootLayoutNav() {
             </Stack> */}
           </LikedJobProvider>
             </LocationProvider>
-        </AuthProvider>
       </ThemeProvider>
+        </AuthProvider>
     </GestureHandlerRootView>
   );
 }

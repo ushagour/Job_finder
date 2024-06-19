@@ -1,33 +1,41 @@
 import React, { useState } from 'react';
 import { SafeAreaView, KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Alert } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
-import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { app } from "../../../firebase/config";
 import { COLORS, FONT, SIZES } from "../../../constants";
+import { useAuth } from '../../../firebase/AuthContext';
 
 import styles from './login.style';
 
-
 const Login = () => {
+  const { signIn } = useAuth();
+
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const auth = getAuth(app);
+  const [error, setError] = useState(''); // Add this line to define setError state
 
-  const handleSignIn = async () => {
+  const handleLogin = async () => {
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      router.push('/'); // Adjust the route accordingly
+      await signIn(email, password);
+      // Redirect to another page upon successful login if needed
+      router.push('/profile/profile');
     } catch (error) {
 
-      // console.log(error.code);
+
+
+
       let errorMessage;
       switch (error.code) {
         case 'auth/user-not-found':
           errorMessage = 'User not found!';
           break;
+        case 'auth/invalid-email':
+          errorMessage = 'Email wrong !';
+          break;
         case 'auth/invalid-credential':
-          errorMessage = 'username or password wrong !';
+          errorMessage = 'password wrong !';
           break;
         case 'auth/too-many-requests':
           errorMessage = 'Too many requests, try later!';
@@ -36,6 +44,8 @@ const Login = () => {
           errorMessage = 'An error occurred!';
       }
       Alert.alert('Error', errorMessage);
+
+  
     }
   };
 
@@ -56,18 +66,16 @@ const Login = () => {
 
         <View style={styles.inputsContainer}>
           <TextInput
-              placeholder="Email"
-              placeholderTextColor={COLORS.gray}  
-
-             value={email}
+            placeholder="Email"
+            placeholderTextColor={COLORS.gray}
+            value={email}
             onChangeText={text => setEmail(text)}
             style={styles.input}
           />
           <TextInput
-            placeholderTextColor={COLORS.gray}
             placeholder="Password"
-
-                        value={password}
+            placeholderTextColor={COLORS.gray}
+            value={password}
             onChangeText={text => setPassword(text)}
             secureTextEntry
             style={styles.input}
@@ -75,7 +83,7 @@ const Login = () => {
         </View>
 
         <View style={styles.buttonsContainer}>
-          <TouchableOpacity onPress={handleSignIn} style={styles.button}>
+          <TouchableOpacity onPress={handleLogin} style={styles.button}>
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => router.push('/profile/login/Registre')} style={[styles.button, styles.buttonOutLine]}>
@@ -97,7 +105,6 @@ const Login = () => {
             source={{ uri: "https://www.transparentpng.com/thumb/google-logo/colorful-google-logo-transparent-clipart-download-u3DWLj.png" }}
           />
         </TouchableOpacity>
- 
 
         <TouchableOpacity onPress={() => router.push('/')} style={[styles.button, styles.buttonOutLine]}>
           <Text style={[styles.buttonText, styles.buttonTextOutLine]}>Go to Home</Text>
