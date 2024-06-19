@@ -10,43 +10,29 @@ import styles from './login.style';
 
 const Login = () => {
   const { signIn } = useAuth();
-
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(''); // Add this line to define setError state
 
   const handleLogin = async () => {
     try {
       await signIn(email, password);
-      // Redirect to another page upon successful login if needed
       router.push('/profile/profile');
     } catch (error) {
-
-
-
-
-      let errorMessage;
-      switch (error.code) {
-        case 'auth/user-not-found':
-          errorMessage = 'User not found!';
-          break;
-        case 'auth/invalid-email':
-          errorMessage = 'Email wrong !';
-          break;
-        case 'auth/invalid-credential':
-          errorMessage = 'password wrong !';
-          break;
-        case 'auth/too-many-requests':
-          errorMessage = 'Too many requests, try later!';
-          break;
-        default:
-          errorMessage = 'An error occurred!';
-      }
+      const errorMessage = getErrorMessage(error.code);
       Alert.alert('Error', errorMessage);
-
-  
     }
+  };
+
+  const getErrorMessage = (errorCode) => {
+    const errorMessages = {
+      'auth/user-not-found': 'User not found!',
+      'auth/invalid-email': 'Email is invalid!',
+      'auth/invalid-credential': 'Password is invalid!',
+      'auth/too-many-requests': 'Too many requests, try later!',
+      default: 'An error occurred!',
+    };
+    return errorMessages[errorCode] || errorMessages.default;
   };
 
   return (
@@ -63,34 +49,36 @@ const Login = () => {
         <View style={styles.headerWrapper}>
           <Text style={styles.headerTitle}>Login</Text>
         </View>
-
         <View style={styles.inputsContainer}>
           <TextInput
             placeholder="Email"
             placeholderTextColor={COLORS.gray}
             value={email}
-            onChangeText={text => setEmail(text)}
+            onChangeText={setEmail}
             style={styles.input}
           />
           <TextInput
             placeholder="Password"
             placeholderTextColor={COLORS.gray}
             value={password}
-            onChangeText={text => setPassword(text)}
+            onChangeText={setPassword}
             secureTextEntry
             style={styles.input}
           />
         </View>
-
         <View style={styles.buttonsContainer}>
           <TouchableOpacity onPress={handleLogin} style={styles.button}>
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => router.push('/profile/login/Registre')} style={[styles.button, styles.buttonOutLine]}>
-            <Text style={[styles.buttonText, styles.buttonTextOutLine]}>Register</Text>
+          <TouchableOpacity
+            onPress={() => router.push('/profile/login/Registre')}
+            style={[styles.button, styles.buttonOutLine]}
+          >
+            <Text style={[styles.buttonText, styles.buttonTextOutLine]}>
+              Register
+            </Text>
           </TouchableOpacity>
         </View>
-
         <View style={styles.lineStyle}>
           <View style={{ flex: 1, height: 1, backgroundColor: 'black' }} />
           <View>
@@ -98,14 +86,15 @@ const Login = () => {
           </View>
           <View style={{ flex: 1, height: 1, backgroundColor: 'black' }} />
         </View>
-
         <TouchableOpacity onPress={() => {}} style={styles.boxStyle}>
           <Image
             style={styles.imageStyle}
-            source={{ uri: "https://www.transparentpng.com/thumb/google-logo/colorful-google-logo-transparent-clipart-download-u3DWLj.png" }}
+            source={{
+              uri:
+                'https://www.transparentpng.com/thumb/google-logo/colorful-google-logo-transparent-clipart-download-u3DWLj.png',
+            }}
           />
         </TouchableOpacity>
-
         <TouchableOpacity onPress={() => router.push('/')} style={[styles.button, styles.buttonOutLine]}>
           <Text style={[styles.buttonText, styles.buttonTextOutLine]}>Go to Home</Text>
         </TouchableOpacity>

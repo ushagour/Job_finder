@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, ScrollView, View, Text, ActivityIndicator } from "react-native";
+import { SafeAreaView,StyleSheet, ScrollView, View, Text, ActivityIndicator } from "react-native";
 import { Stack, useRouter } from "expo-router";
 import { COLORS, icons, images, SIZES } from "../constants";
 import {
@@ -13,74 +13,77 @@ import { useAuth } from '../firebase/AuthContext';
 import { useLocation } from '../hook/context/LocationContext';
 
 const Home = () => {
+  const { user, isLoading: isAuthLoading } = useAuth();
+  const { city, region, isLoading: isLocationLoading } = useLocation();
   const router = useRouter();
-  const [searchTerm, setSearchTerm] = useState("");
-  const { user, user_loading } = useAuth();
-  const { city, region, location_loading } = useLocation();
 
-  const redirectMe = () => {
-    if (user) {
-      router.push(`/profile/profile`);
-    } else {
-      router.push(`/profile/login/Login`);
-    }
+  const navigateToProfile = () => {
+    const profileRoute = user ? '/profile/profile' : '/profile/login/Login';
+    router.push(profileRoute);
   };
 
   useEffect(() => {
-    if (!location_loading) {
+    if (!isLocationLoading && region && city) {
       console.log(`Location loaded: ${region}, ${city}`);
     }
-  }, [location_loading, city, region]);
+  }, [isLocationLoading, region, city]);
 
-
-
-  if (location_loading) {
+  if (isLocationLoading) {
     return (
-      <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: COLORS.lightWhite }}>
+      <SafeAreaView style={styles.loadingContainer}>
         <ActivityIndicator size="large" color={COLORS.primary} />
       </SafeAreaView>
     );
   }
 
   return (
-    <>
+    <SafeAreaView style={styles.container}>
       <StatusBar style="dark" />
-      <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
-        <Stack.Screen
-          options={{
-            headerStyle: { backgroundColor: COLORS.lightWhite },
-            headerShadowVisible: false,
-            headerLeft: () => (
-              <ScreenHeaderBtn iconUrl={icons.menu} dimension='60%' />
-            ),
-            headerRight: () => (
-              <ScreenHeaderBtn
-                iconUrl={images.profile}
-                dimension='70%'
-                HandelOnPress={redirectMe}
-              />
-            ),
-            headerTitle: "",
-          }}
-        />
-        <ScrollView>
-          <View style={{ flex: 1, padding: SIZES.medium }}>
-            <Welcome
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              handleClick={() => {
-                if (searchTerm) {
-                  router.push(`/search/${searchTerm}`);
-                }
-              }}
+      <Stack.Screen
+        options={{
+          headerStyle: { backgroundColor: COLORS.lightWhite },
+          headerShadowVisible: false,
+          headerLeft: () => (
+            <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
+          ),
+          headerRight: () => (
+            <ScreenHeaderBtn
+              iconUrl={images.profile}
+              dimension="70%"
+              HandelOnPress={navigateToProfile}
             />
-            <Popularjobs country={region || "Morocco"} />
-            <Nearbyjobs city={city || "Rabat"} />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+          ),
+          headerTitle: "",
+        }}
+      />
+      <ScrollView style={styles.scrollContainer}>
+        <Welcome
+          searchTerm={''}
+          setSearchTerm={() => {}}
+          handleClick={() => {}}
+        />
+        <Popularjobs country={region || "Morocco"} />
+        <Nearbyjobs city={city || "Rabat"} />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.lightWhite,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: COLORS.lightWhite,
+  },
+  scrollContainer: {
+    flex: 1,
+    padding: SIZES.medium,
+  },
+});
 
 export default Home;

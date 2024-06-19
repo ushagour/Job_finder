@@ -2,11 +2,12 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import {  useRouter } from 'expo-router';
 import { addDoc, collection,doc, getDoc, getFirestore, setDoc,FIRESTORE_DB } from 'firebase/firestore';
 import { app } from '../../firebase/config';
+import { Alert } from 'react-native';
 
 
 const LikedJobContext = createContext();
-const router = useRouter();
 const firestore = getFirestore(app);
+const router = useRouter();
 
 export const LikedJobProvider = ({ children }) => {
 
@@ -27,18 +28,32 @@ export const LikedJobProvider = ({ children }) => {
                   // Update the Firestore document with the updated array
                   await setDoc(userDocRef, { likedJobs: updatedLikedJobs });
 
-                  console.log('Liked jobs updated successfully.');
+                  // console.log('Liked jobs updated successfully.');
+                  Alert.alert('Success', 'Liked jobs updated successfully.');
+
                 } else {
-                  console.log('Job ID already exists in the liked jobs array.');
+                  Alert.alert('Success','Job ID already exists in the liked jobs collection.');
+                  // console.log('Job ID already exists in the liked jobs array.');
                 }
           } else {
             // If the document doesn't exist, create it with the liked jobs field
             await setDoc(userDocRef, { likedJobs: [newLikedJobId] });
-            console.log(`New document created for user with liked jobs.`);
+            // console.log(`New document created for user with liked jobs.`);
+            
+            Alert.alert('Success', 'New document created for user with liked jobs.');
           }
-        } catch (error) {
-          console.error('Error updating or creating liked jobs:', error.message);
-        }
+        
+      } catch (error) {
+        console.error('Error updating or creating liked jobs:', );
+        Alert.alert('Error',error.message);
+  
+  
+      }
+
+
+
+
+
       };
 
 
@@ -58,18 +73,17 @@ export const LikedJobProvider = ({ children }) => {
               // Update the Firestore document with the updated array
               await setDoc(userDocRef, { likedJobs: updatedLikedJobs });
       
-              console.log('Liked job removed successfully.');
+              Alert.alert('Success', 'Liked job removed successfully.');
             } else {
-              console.log('Job ID not found in the liked jobs array.');
+              Alert.alert('Not Found', 'Job ID not found in the liked jobs array.');
             }
           } else {
-            console.log('User document not found.');
+            Alert.alert('Not Found', 'User document not found.');
           }
         } catch (error) {
-          console.error('Error removing liked job:', error.message);
+          Alert.alert('Error', `Error removing liked job: ${error.message}`);
         }
       };
-      
 
 // const addToLikes = async (jobId,user) => {
 //     try {      
