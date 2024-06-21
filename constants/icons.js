@@ -11,10 +11,12 @@ import chevronRight from '../assets/icons/chevron-right.png'
 import logout from '../assets/icons/logout.png'
 import edit from '../assets/icons/edit.png';
 import deleteIcon from '../assets/icons/delete.png';
+import user from '../assets/icons/user.png';
 import home from '../assets/icons/home.png';
 
 export default {
   heart,
+  user,
   menu,
   search,
   filter,

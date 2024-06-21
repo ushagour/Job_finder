@@ -17,6 +17,8 @@ const Home = () => {
   const { city, region, isLoading: isLocationLoading } = useLocation();
   const router = useRouter();
 
+  // console.log(user);
+
   const navigateToProfile = () => {
     const profileRoute = user ? '/profile/profile' : '/profile/login/Login';
     router.push(profileRoute);
@@ -48,7 +50,7 @@ const Home = () => {
           ),
           headerRight: () => (
             <ScreenHeaderBtn
-              iconUrl={images.profile}
+              iconUrl={icons.user}
               dimension="70%"
               HandelOnPress={navigateToProfile}
             />
