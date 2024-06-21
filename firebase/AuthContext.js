@@ -7,9 +7,9 @@ import { useRouter } from 'expo-router';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  const router = useRouter();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
 
   useEffect(() => {
     const auth = getAuth(app);
@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const userId = user.uid;
       const firestore = getFirestore(app);
-      const usersCollectionRef = collection(firestore, 'users');
+      const usersCollectionRef = collection(firestore, 'profiles');
       const querySnapshot = await getDocs(query(usersCollectionRef, where('uid', '==', userId)));
 
       if (!querySnapshot.empty) {
@@ -50,31 +50,29 @@ export const AuthProvider = ({ children }) => {
       await getUserProfile(userCredential.user);
       
     } catch (error) {
-      console.error('Error signing in:', error.message);
       throw error;
     }
   };
 
-  const register = async (email, password, additionalData) => {
-    try {
-      const auth = getAuth(app);
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
+  // const register = async (email, password, additionalData) => {
+  //   try {
+  //     const auth = getAuth(app);
+  //     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  //     const user = userCredential.user;
 
-      // Save additional user data to Firestore
-      const firestore = getFirestore(app);
-      await setDoc(doc(firestore, 'users', user.uid), {
-        uid: user.uid,
-        email: user.email,
-        ...additionalData,
-      });
+  //     // Save additional user data to Firestore
+  //     const firestore = getFirestore(app);
+  //     await setDoc(doc(firestore, 'profiles', user.uid), {
+  //       uid: user.uid,
+  //       email: user.email,
+  //       ...additionalData,
+  //     });
 
-      await getUserProfile(user);
-    } catch (error) {
-      console.error('Error registering user:', error.message);
-      throw error;
-    }
-  };
+  //     await getUserProfile(user);
+  //   } catch (error) {
+  //     throw error;
+  //   }
+  // };
 
   const signInWithGoogle = async () => {
     try {
@@ -92,10 +90,9 @@ export const AuthProvider = ({ children }) => {
   const updateProfile = async (uid, updatedData) => {
     try {
       const firestore = getFirestore(app);
-      await setDoc(doc(firestore, 'users', uid), updatedData, { merge: true });
+      await setDoc(doc(firestore, 'profiles', uid), updatedData, { merge: true });
       await getUserProfile({ uid });
     } catch (error) {
-      console.error('Error updating profile:', error.message);
       throw error;
     }
   };
@@ -113,7 +110,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, signIn, register, signInWithGoogle, updateProfile, signOut }}>
+    <AuthContext.Provider value={{ user, loading, signIn, signInWithGoogle, updateProfile, signOut }}>
       {children}
     </AuthContext.Provider>
   );

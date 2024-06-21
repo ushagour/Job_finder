@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Alert } from 'react-native';
+import { SafeAreaView, KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Alert,ActivityIndicator } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 import { getAuth } from "firebase/auth";
 import { app } from "../../../firebase/config";
@@ -13,14 +13,20 @@ const Login = () => {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async () => {
+
+    setIsLoading(true); // Show activity indicator
+
     try {
       await signIn(email, password);
       router.push('/profile/profile');
     } catch (error) {
       const errorMessage = getErrorMessage(error.code);
       Alert.alert('Error', errorMessage);
+    }finally {
+      setIsLoading(false); // Hide activity indicator after login attempt
     }
   };
 
@@ -70,6 +76,11 @@ const Login = () => {
           <TouchableOpacity onPress={handleLogin} style={styles.button}>
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
+          {isLoading && (
+        <View style={styles.indicatorContainer}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      )}
           <TouchableOpacity
             onPress={() => router.push('/profile/login/Registre')}
             style={[styles.button, styles.buttonOutLine]}

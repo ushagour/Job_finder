@@ -19,51 +19,40 @@ export {
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [loaded, error] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-    ...FontAwesome.font,
-    DMBold: require("../assets/fonts/DMSans-Bold.ttf"),
-    DMMedium: require("../assets/fonts/DMSans-Medium.ttf"),
-    DMRegular: require("../assets/fonts/DMSans-Regular.ttf"),
+  const [fontsLoaded, fontsError] = useFonts({
+    spaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    DMBold: require('../assets/fonts/DMSans-Bold.ttf'),
+    DMMedium: require('../assets/fonts/DMSans-Medium.ttf'),
+    DMRegular: require('../assets/fonts/DMSans-Regular.ttf'),
   });
 
-  // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
-    if (error) throw error;
-  }, [error]);
+    if (fontsError) throw fontsError;
+  }, [fontsError]);
 
   useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
+    if (fontsLoaded) SplashScreen.hideAsync();
+  }, [fontsLoaded]);
 
-  if (!loaded) {
-    return null;
-  }
+  if (!fontsLoaded) return null;
 
   return <RootLayoutNav />;
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme();
-  
+  const theme = useColorScheme() === 'dark' ? DarkTheme : DefaultTheme;
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-        <AuthProvider>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <AuthProvider>
+        <ThemeProvider value={theme}>
           <LocationProvider>
-
-          <LikedJobProvider>
-          <Stack />
-
-            {/* <Stack>
-              <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-            </Stack> */}
-          </LikedJobProvider>
-            </LocationProvider>
-      </ThemeProvider>
-        </AuthProvider>
+            <LikedJobProvider>
+              <Stack />
+            </LikedJobProvider>
+          </LocationProvider>
+        </ThemeProvider>
+      </AuthProvider>
     </GestureHandlerRootView>
   );
 }

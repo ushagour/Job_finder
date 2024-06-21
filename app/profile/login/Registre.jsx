@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, KeyboardAvoidingView, View, Text, TextInput, TouchableOpacity, Image,Alert } from 'react-native';
+import { SafeAreaView, KeyboardAvoidingView, View, Text, TextInput, TouchableOpacity, Image,Alert,ActivityIndicator } from 'react-native';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword,getAuth } from 'firebase/auth';
 import { COLORS, images } from '../../../constants';
@@ -14,8 +14,11 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleRegister = async () => {
+    setIsLoading(true); // Show activity indicator
+
     try {
       // Validate inputs
       if (!email || !name || !password || !confirmPassword) {
@@ -34,11 +37,11 @@ const Register = () => {
       const user = userCredential.user;
   
       // Store user data in Firestore
-      const usersCollection = collection(firestore, 'users');
+      const usersCollection = collection(firestore, 'profiles');
       await addDoc(usersCollection, {
         uid: user.uid,
         displayName: name,
-        avatar: images.profile,
+        avatar: 'https://via.placeholder.com/150',
         email: email,
       });
       
@@ -72,6 +75,8 @@ const Register = () => {
           }
       }
       Alert.alert('Error', errorMessage);
+    }finally {
+      setIsLoading(false); // Hide activity indicator after login attempt
     }
   };
   
@@ -129,6 +134,13 @@ const Register = () => {
           >
             <Text style={styles.buttonText}>Register</Text>
           </TouchableOpacity>
+
+
+          {isLoading && (
+        <View style={styles.indicatorContainer}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      )}
           <TouchableOpacity
             onPress={() => router.push('/profile/login/Login')}
             style={[styles.button, styles.buttonOutLine]}

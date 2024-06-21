@@ -7,12 +7,12 @@ import { useAuth } from  '../../../firebase/AuthContext';
 
 const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
   const { user } = useAuth();
+  const router =useRouter();
+  const [activeJobType,setactiveJobType]= useState("full-time");
   const displayName = user ? user.displayName : '';
 
     
-  const router =useRouter();
   const jobTypes =["full-time","Part-time","Freelace"];
-  const [activeJobType,setactiveJobType]= useState("full-time");
 
 
   return (
