@@ -14,18 +14,11 @@ const LikedJob = ({ jobs,deslike,refresh}) => {
   const { data, isLoading, error } = useFetchLocal('profile', {},jobs);
   const [refreshing, setRefreshing] = useState(false);
 
-
-// console.log(data);
-
-    // const { data, isLoading, error, refetch } = useFetch('job-details', {
-    //   job_id: jobs,
-    //   extended_publisher_details: 'false'
-    // });
-
-
     const handleRefresh = () => {
+
+
       setRefreshing(true);
-      refresh();
+      console.log("remoubnt the component  to refrech wuth the new jobs "+jobs);
       setRefreshing(false);
 
     };
@@ -38,8 +31,16 @@ const LikedJob = ({ jobs,deslike,refresh}) => {
         <Text>No data available  </Text>
     ) :(
       <View>
-     
-        <FlatList
+              <View style={styles.header}>
+                <Text style={styles.headerTitle}>Liked jobs</Text>
+                <TouchableOpacity onPress={()=>{router.push(``)}} >
+                  <Text style={styles.headerBtn} >Show all</Text>
+                </TouchableOpacity>
+              </View>
+
+      <View style={styles.cardsContainer}>
+
+      <FlatList
           data={data}
           renderItem={({ item }) => (
             <Swipeable
@@ -64,6 +65,15 @@ const LikedJob = ({ jobs,deslike,refresh}) => {
           onRefresh={handleRefresh}
           refreshing={refreshing}
         />
+
+      </View>
+   
+
+
+
+
+
+
       </View>
     )
     
