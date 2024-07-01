@@ -1,27 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { ActivityIndicator, TouchableOpacity, Text, View, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuth } from '../../firebase/AuthContext';
 import { Stack, useRouter } from 'expo-router';
-import { COLORS, icons, SIZES } from '../../constants';
+import { COLORS, icons, SIZES,images } from '../../constants';
 import { ScreenHeaderBtn, LikedJob } from '../../components';
 import { useLikedJob } from '../../hook/context/LikedJobContext';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import { Alert } from 'react-native';
 
 import styles from './profile.style';
 
 const Profile = () => {
-  const router = useRouter();
   const { user, signOut } = useAuth();
   const { removeLikedJob } = useLikedJob();
+  const router = useRouter();
+
+
+  const avatarUrl = user?.avatar || 'https://example.com/default-avatar.png';
 
   const [loading, setLoading] = useState(true);
-  const [likedJobs, setLikedJobs] = useState(null);
+  const [likedJobs, setLikedJobs] = useState([]);
 
-  // Define likedJobs state with initial value null
-
-
-  const getLikedJobs = async () => {
+  const fetchLikedJobs = useCallback(async () => {
+    if (!user) return;
+    
     try {
       const firestore = getFirestore();
       const userDocRef = doc(firestore, 'likedJobs', user.uid);
@@ -29,73 +32,99 @@ const Profile = () => {
 
       if (userDocSnap.exists()) {
         const likedJobsData = userDocSnap.data().likedJobs || [];
-        const joinedLikedJobs = likedJobsData.join(',');
-        setLikedJobs(joinedLikedJobs);
+        setLikedJobs(likedJobsData);
+
       } else {
         console.log("No liked jobs found for this user.");
-        setLikedJobs(""); // Set likedJobs to empty string if no liked jobs found
+        setLikedJobs([]);
       }
     } catch (error) {
       console.error('Error fetching liked jobs:', error);
-      setLikedJobs(""); // Set likedJobs to empty string in case of error
+      setLikedJobs([]);
     } finally {
-      setLoading(false); // Set loading to false after fetching liked jobs
+      setLoading(false);
+    }
+  }, [user]);
+
+  
+  useEffect(() => {
+
+
+    // console.log(user?.avatar)
+    fetchLikedJobs();
+  }, [fetchLikedJobs]);
+
+
+
+  const handleLogout = () => {
+    Alert.alert(
+      'Confirm Logout',
+      'Are you sure you want to log out?',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        { text: 'Log Out', onPress: () =>     signOut() },
+      ],
+      { cancelable: false }
+    );
+  };
+  
+
+
+  const handleDeslike = async (likedJobIdToRemove) => {
+    if (user) {
+      removeLikedJob(user.uid, likedJobIdToRemove);
+      await fetchLikedJobs();
     }
   };
 
-  useEffect(() => {
-    getLikedJobs(); // Fetch liked jobs data when component mounts
-    
-  }, []);
-
-  const handleLogout = () => {
-    signOut();
-  };
-
-  const handleDeslike = async (likedJobIdToRemove) => {
-    removeLikedJob(user.uid, likedJobIdToRemove);
-    await getLikedJobs();
-
-    // TODO You can optionally call getLikedJobs() here to refresh liked jobs after removing one
-  };
-
-
-  const handelrefresh = async ()=>{
-    await getLikedJobs();
-  }
-
   return (
-    <SafeAreaView style={{ backgroundColor: COLORS.lightWhite }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen
         options={{
           headerStyle: { backgroundColor: COLORS.lightWhite },
           headerShadowVisible: false,
           headerBackVisible: false,
           headerLeft: () => (
-            <ScreenHeaderBtn iconUrl={icons.home} dimension="60%" HandelOnPress={() => router.push('/')} />
+            <ScreenHeaderBtn 
+              iconUrl={icons.home} 
+              dimension="60%" 
+              HandelOnPress={() => router.push('/')} 
+            />
           ),
           headerRight: () => (
-            <ScreenHeaderBtn iconUrl={icons.logout} dimension="60%" HandelOnPress={handleLogout} />
+            <ScreenHeaderBtn 
+              iconUrl={icons.logout} 
+              dimension="60%" 
+              HandelOnPress={handleLogout} 
+            />
           ),
           headerTitle: '',
         }}
       />
       <View style={styles.userInfoHeader}>
-        <Image source={{ uri: user?.avatar }} style={styles.profilePicture} />
+        
+        <Image  source={{ uri: avatarUrl }}  style={styles.profilePicture} />
         <View style={styles.userInfo}>
           <Text style={styles.userName}>{user?.displayName}</Text>
-          {user && user.email && <Text style={styles.bio}>{user.email}</Text>}
+          {user?.email && <Text style={styles.bio}>{user.email}</Text>}
         </View>
         <TouchableOpacity style={styles.editButton}>
-          <ScreenHeaderBtn iconUrl={icons.edit} dimension="60%" style={styles.editButtonText} HandelOnPress={() => router.push('/profile/EditProfile')} />
+          <ScreenHeaderBtn 
+            iconUrl={icons.edit} 
+            dimension="60%" 
+            HandelOnPress={() => router.push('/profile/EditProfile')} 
+          />
         </TouchableOpacity>
       </View>
       <View style={styles.profileContent}>
-        <Text style={styles.contentText}>My liked jobs :</Text>
-        {loading ? ( // Show loading indicator while fetching liked jobs
+        {loading ? (
           <ActivityIndicator size="large" color={COLORS.primary} />
         ) : (
-          <LikedJob jobs={likedJobs} deslike={handleDeslike} refresh={handelrefresh} />
+          <LikedJob jobs={likedJobs.join(",")} deslike={handleDeslike} refresh={fetchLikedJobs} />
         )}
       </View>
     </SafeAreaView>

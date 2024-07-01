@@ -11,13 +11,45 @@ import { useLikedJob } from  '../../../../hook/context/LikedJobContext';
 
 
 
-const NearbyJobCard = ({ job,job_id, handleNavigate,isLiked }) => {
+const NearbyJobCard = ({ job,job_id, handleNavigate,userIsLiked }) => {
+  
+  const { user} = useAuth();
+  const { updateOrCreateLikedJobs} =  useLikedJob();
+  const[isLiked,setIsLiked] = useState(false);
 
-    const { updateOrCreateLikedJobs} =  useLikedJob();
-    const { user} = useAuth();
-    const firestore = getFirestore(app);
+    const fetchLikedJobs = useCallback(async () => {
+      if (!user) return;
+      
+      try {
+        const firestore = getFirestore();
+        const userDocRef = doc(firestore, 'likedJobs', user.uid);
+        const userDocSnap = await getDoc(userDocRef);
+  
+        if (userDocSnap.exists()) {
+          const likedJobsData = userDocSnap.data().likedJobs || [];
+          if (userIsLiked) {
+            setIsLiked(true)
+          }
+          else{
+            const jobIsLiked = likedJobsData.includes(job_id);
+            setIsLiked(jobIsLiked);
 
-
+          }
+       
+        } else {
+          console.log("No liked jobs found for this user.");
+        }
+      } catch (error) {
+        console.error('Error fetching liked jobs:', error);
+      } 
+    }, [user]);
+  
+  useEffect(() => {
+    
+    fetchLikedJobs()
+  
+  
+  }, [])
 
 
 

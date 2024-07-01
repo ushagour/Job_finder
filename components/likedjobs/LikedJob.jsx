@@ -54,7 +54,7 @@ const LikedJob = ({ jobs,deslike,refresh}) => {
               )}
             >
               <NearbyJobCard
-                isLiked={true}
+                userIsLiked={true}
                 job={item}
                 handleNavigate={() => router.push(`/job-details/${item.job_id}`)}
               />

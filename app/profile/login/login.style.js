@@ -63,6 +63,8 @@ const styles = StyleSheet.create({
   },
   indicatorContainer: {
     marginTop: 20,
+    marginBottom: 20,
+
   },
 
 });

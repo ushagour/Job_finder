@@ -13,9 +13,9 @@ import { useAuth } from '../firebase/AuthContext';
 import { useLocation } from '../hook/context/LocationContext';
 
 const Home = () => {
+  const router = useRouter();
   const { user, isLoading: isAuthLoading } = useAuth();
   const { city, region, isLoading: isLocationLoading } = useLocation();
-  const router = useRouter();
 
   // console.log(user);
 
