@@ -5,7 +5,7 @@ import {
   SafeAreaView,
   ScrollView,
   ActivityIndicator,
-  RefreshControl,Share 
+  RefreshControl,Share,Alert 
 } from "react-native";
 
 import {
@@ -53,12 +53,20 @@ const JobDetails = () => {
         });
     
         if (result.action === Share.sharedAction) {
-          if (result.activityType) {
-            console.log(result.activityType);
-            // Shared via activity type Nb:here we can add a tras functionality 
-          } else {
-            // Shared
-          }
+          // console.log(result.activityType);
+          // if (result.activityType) {
+          //   alert(`the job :${data[0].job_title} had been sheared succusfuly !! on ${result.activityType}`  ) 
+          //   // Shared via activity type Nb:here we can add a tras functionality 
+          // } else {
+          //   // Shared
+          //   alert("2")
+          // }
+
+
+          // console.log(result.activityType);
+          alert(`the job :${data[0].job_title} 
+            had been sheared succusfuly !! on ${result.activityType}`  ) 
+
         } else if (result.action === Share.dismissedAction) {
           // Dismissed
         }
