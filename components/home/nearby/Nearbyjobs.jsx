@@ -11,18 +11,11 @@ import {
 import styles from "./nearbyjobs.style";
 import { COLORS, SIZES } from "../../../constants";
 import NearbyjobCard from "../../common/cards/nearby/NearbyJobCard";
-import useFetch from "../../../hook/useFetch";
 import useFetchLocal from "../../../hook/useFetchLocal";
-import { useCallback,useEffect, useState } from "react";
-import { addDoc, collection,doc, getDoc, getFirestore, setDoc } from 'firebase/firestore';
-// import { app, auth } from '../../../firebase/config';
-// import { useAuth } from  '../../../firebase/AuthContext';
-// import { useLikedJob } from  '../../../hook/context/LikedJobContext';
-// import { useAuth } from  '../../../firebase/AuthContext';
+
 
 const Nearbyjobs = (props) => {
   const router = useRouter();
-  // Initialize likedJobs as an object with job_id as keys
   
   const { data, isLoading, error } = useFetchLocal('all', {});
 
@@ -32,12 +25,6 @@ const Nearbyjobs = (props) => {
   //   radius: '1',
   // });
   
-
-
-  
- 
-   
-
   return (
     <View style={styles.container}>
       <View style={styles.header}>
