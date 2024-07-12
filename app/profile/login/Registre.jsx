@@ -93,8 +93,12 @@ const Register = () => {
       />
       <KeyboardAvoidingView style={styles.container}>
         <View style={styles.headerWrapper}>
-          <Text style={styles.headerTitle}>Register</Text>
-        </View>
+        <Image
+              source={require('./../../../assets/logo/Job_logo-login.png')}
+             style={styles.logo}
+              resizeMode="contain"
+            />       
+             </View>
         <View style={styles.inputsContainer}>
           <TextInput
             placeholder="Email"

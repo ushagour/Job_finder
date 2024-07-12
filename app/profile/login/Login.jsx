@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-import { SafeAreaView, KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Alert,ActivityIndicator } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View,  
+   KeyboardAvoidingView,
+   TouchableWithoutFeedback,
+   
+  ScrollView,
+
+  Keyboard,
+  Platform,
+
+  TextInput, TouchableOpacity, Image, Alert,ActivityIndicator } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 import { getAuth } from "firebase/auth";
 import { app } from "../../../firebase/config";
@@ -42,6 +51,14 @@ const Login = () => {
   };
 
   return (
+
+
+    <KeyboardAvoidingView
+    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    style={{ flex: 1 }}
+  >
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen
         options={{
@@ -53,7 +70,12 @@ const Login = () => {
       />
       <KeyboardAvoidingView style={styles.container}>
         <View style={styles.headerWrapper}>
-          <Text style={styles.headerTitle}>Login</Text>
+
+          <Image
+              source={require('./../../../assets/logo/Job_logo-login.png')}
+             style={styles.logo}
+              resizeMode="contain"
+            />
         </View>
         <View style={styles.inputsContainer}>
           <TextInput
@@ -111,6 +133,9 @@ const Login = () => {
         </TouchableOpacity>
       </KeyboardAvoidingView>
     </SafeAreaView>
+    </TouchableWithoutFeedback>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 

@@ -4,6 +4,10 @@
 
 ![login screen](./screenshots/auth/1.png )
 ![register screen](./screenshots/auth/2.png )
+![profile screen](./screenshots/auth/3.png )
+![Edit User's profile screen](./screenshots/auth/4.png )
+![Home screen (user connected ) ](./screenshots/welcome/Screenshot_1719838712.png)
+![Home guest screen (user not connected ) ](./screenshots/welcome/Screenshot_1719838712.png)
 
 ***
 
@@ -33,4 +37,84 @@ Stylesheet
 
 👉 Optimized for All Devices: A responsive design for a seamless user experience across various devices.
 
-and many more, including code architecture and reusability
+
+
+
+
+👉  building APK with eas
+To generate an APK without submitting it to the Google Play Store, you can follow these steps:
+
+### Step 1: Install Expo CLI and EAS CLI
+Make sure you have the Expo CLI and EAS CLI installed. If not, you can install them using the following commands:
+
+```bash
+npm install -g expo-cli
+npm install -g eas-cli
+```
+
+### Step 2: Configure `eas.json`
+Create or update your `eas.json` file to include a profile for building the APK. This file should be in the root directory of your project.
+
+```json
+{
+  "build": {
+    "production": {
+      "android": {
+        "buildType": "apk"
+      }
+    }
+  }
+}
+```
+
+### Step 3: Authenticate with Expo
+Log in to your Expo account if you haven't already:
+
+```bash
+expo login
+```
+
+### Step 4: Build the APK
+Run the following command to start the build process for your Android APK:
+
+```bash
+eas build --platform android --profile production
+```
+
+This command will start the build process on Expo's servers. Once the build is complete, you will get a link to download the APK.
+
+### Step 5: Download the APK
+After the build process completes, Expo will provide a URL to download the APK. You can access the link directly from the terminal output or from your Expo dashboard under the "Builds" section.
+
+### Example of the Complete Workflow
+1. **Install dependencies**:
+    ```bash
+    npm install -g expo-cli eas-cli
+    ```
+
+2. **Create or update `eas.json`**:
+    ```json
+    {
+      "build": {
+        "production": {
+          "android": {
+            "buildType": "apk"
+          }
+        }
+      }
+    }
+    ```
+
+3. **Login to Expo**:
+    ```bash
+    expo login
+    ```
+
+4. **Build the APK**:
+    ```bash
+    eas build --platform android --profile production
+    ```
+
+5. **Download the APK**:
+   After the build is complete, download the APK from the provided URL in the terminal output or from your Expo dashboard.
+
