@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+// import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -8,7 +7,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { AuthProvider } from '../firebase/AuthContext';
 import { LikedJobProvider } from '../hook/context/LikedJobContext';
 import { LocationProvider } from '../hook/context/LocationContext';
-import { useColorScheme } from '@/components/useColorScheme';
+
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -16,9 +15,11 @@ export {
 } from 'expo-router';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+
+
 
 export default function RootLayout() {
+  SplashScreen.preventAutoHideAsync();
   const [fontsLoaded, fontsError] = useFonts({
     spaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     DMBold: require('../assets/fonts/DMSans-Bold.ttf'),
@@ -27,31 +28,38 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
-    if (fontsError) throw fontsError;
+    if (fontsError) {
+      console.error('Fonts loading error:', fontsError);
+      throw fontsError;
+    }
   }, [fontsError]);
-
+  
   useEffect(() => {
-    if (fontsLoaded) SplashScreen.hideAsync();
+    if (fontsLoaded) {
+      SplashScreen.hideAsync().catch((error) => {
+        console.error('Splash screen hiding error:', error);
+      });
+    }
   }, [fontsLoaded]);
 
-  if (!fontsLoaded) return null;
-
+  if (!fontsLoaded) {
+    return null;
+  }
+  
   return <RootLayoutNav />;
 }
 
 function RootLayoutNav() {
-  const theme = useColorScheme() === 'dark' ? DarkTheme : DefaultTheme;
+  console.log('RootLayout');
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <AuthProvider>
-        <ThemeProvider value={theme}>
           <LocationProvider>
             <LikedJobProvider>
-              <Stack />
+              <Stack  />
             </LikedJobProvider>
           </LocationProvider>
-        </ThemeProvider>
       </AuthProvider>
     </GestureHandlerRootView>
   );

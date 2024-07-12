@@ -11,17 +11,17 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const auth = getAuth(app);
-    const unsubscribe = onAuthStateChanged(auth, async (userAuth) => {
-      if (userAuth) {
-        await getUserProfile(userAuth);
-      }
-      setLoading(false);
-    });
+  const auth = getAuth(app);
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, async (userAuth) => {
+  //     if (userAuth) {
+  //       await getUserProfile(userAuth);
+  //     }
+  //     setLoading(false);
+  //   });
 
-    return () => unsubscribe();
-  }, []);
+  //   return () => unsubscribe();
+  // }, []);
 
   const getUserProfile = async (user) => {
     try {
