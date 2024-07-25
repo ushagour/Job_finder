@@ -11,9 +11,9 @@ import { SafeAreaView, StyleSheet, Text, View,
   TextInput, TouchableOpacity, Image, Alert,ActivityIndicator } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 import { getAuth } from "firebase/auth";
-import { app } from "../../../firebase/config";
-import { COLORS, FONT, SIZES } from "../../../constants";
-import { useAuth } from '../../../firebase/AuthContext';
+import { app } from "../../firebase/config";
+import { COLORS, FONT, SIZES } from "../../constants";
+import { useAuth } from '../../firebase/AuthContext';
 
 import styles from './login.style';
 
@@ -72,7 +72,7 @@ const Login = () => {
         <View style={styles.headerWrapper}>
 
           <Image
-              source={require('./../../../assets/logo/Job_logo-login.png')}
+              source={require('./../../assets/logo/Job_logo-login.png')}
              style={styles.logo}
               resizeMode="contain"
             />
@@ -104,7 +104,7 @@ const Login = () => {
         </View>
       )}
           <TouchableOpacity
-            onPress={() => router.push('/profile/login/Registre')}
+            onPress={() => router.push('/login/Registre')}
             style={[styles.button, styles.buttonOutLine]}
           >
             <Text style={[styles.buttonText, styles.buttonTextOutLine]}>

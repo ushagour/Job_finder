@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { SafeAreaView, KeyboardAvoidingView, View, Text, TextInput, TouchableOpacity, Image,Alert,ActivityIndicator } from 'react-native';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword,getAuth } from 'firebase/auth';
-import { COLORS, images } from '../../../constants';
+import { COLORS, images } from '../../constants';
 import styles from './login.style'; // Import the shared styles from the login screen
 import { Stack, useRouter } from 'expo-router';
-import { app } from '../../../firebase/config'; // Import your Firebase app instance
+import { app } from '../../firebase/config'; // Import your Firebase app instance
 
 const Register = () => {
   const router = useRouter();
@@ -94,7 +94,7 @@ const Register = () => {
       <KeyboardAvoidingView style={styles.container}>
         <View style={styles.headerWrapper}>
         <Image
-              source={require('./../../../assets/logo/Job_logo-login.png')}
+              source={require('./../../assets/logo/Job_logo-login.png')}
              style={styles.logo}
               resizeMode="contain"
             />       
@@ -146,7 +146,7 @@ const Register = () => {
         </View>
       )}
           <TouchableOpacity
-            onPress={() => router.push('/profile/login/Login')}
+            onPress={() => router.push('/login/Login')}
             style={[styles.button, styles.buttonOutLine]}
           >
             <Text style={[styles.buttonText, styles.buttonTextOutLine]}>Back to Login</Text>

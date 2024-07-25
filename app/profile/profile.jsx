@@ -116,7 +116,7 @@ const Profile = () => {
           <ScreenHeaderBtn 
             iconUrl={icons.edit} 
             dimension="60%" 
-            HandelOnPress={() => router.push('/profile/EditProfile')} 
+            HandelOnPress={() => router.push('/profile/Edit/EditProfile')} 
           />
         </TouchableOpacity>
       </View>
