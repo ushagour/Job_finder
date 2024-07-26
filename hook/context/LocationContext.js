@@ -8,28 +8,44 @@ export const LocationProvider = ({ children }) => {
   const [region, setRegion] = useState(null);
   const [location_loading, setloading] = useState(true);
 
-  const fetchCityName = async () => {
-    try {
-      let { status } = await Location.requestForegroundPermissionsAsync();
+
+
+
+
+  async function requestLocationPermissions() {
+    if (Platform.OS === 'android') {
+      const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') {
-        throw new Error('Permission to access location was denied');
+        alert('Permission to access location was denied');
+        return false;
       }
-
-      let location = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High });
-      const { latitude, longitude } = location.coords;
-
-      let addressResponse = await Location.reverseGeocodeAsync({ latitude, longitude });
-      let city = addressResponse[0].city;
-      let region = addressResponse[0].region;
-
-      setCity(city);
-      setRegion(region);
-      setloading(false)
-
-    } catch (error) {
-      console.error('Error fetching location:', error);
+    } else if (Platform.OS === 'ios') {
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        alert('Permission to access location was denied');
+        return false;
+      }
     }
-  };
+    return true;
+  }
+  
+  async function fetchCityName() {
+    const hasPermission = await requestLocationPermissions();
+    if (!hasPermission) return;
+  
+    let location = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High });
+    const { latitude, longitude } = location.coords;
+
+    let addressResponse = await Location.reverseGeocodeAsync({ latitude, longitude });
+    let city = addressResponse[0].city;
+    let region = addressResponse[0].region;
+
+    setCity(city);
+    setRegion(region);
+    setloading(false)
+  }
+
+
 
   useEffect(() => {
     fetchCityName();

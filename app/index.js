@@ -20,7 +20,7 @@ const Home = () => {
   // console.log(user);
 
   const navigateToProfile = () => {
-    const profileRoute = user ? '/profile/profile' : '/profile/login/Login';
+    const profileRoute = user ? '/profile/profile' : '/login/Login';
     router.push(profileRoute);
   };
 

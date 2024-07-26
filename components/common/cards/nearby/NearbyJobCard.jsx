@@ -56,6 +56,12 @@ const NearbyJobCard = ({ job,job_id, handleNavigate,userIsLiked }) => {
 
     const handleLikeButtonPress = (job_id) => {
       const userId = user ? user.uid : '';
+
+      if (userIsLiked) {
+      alert('you already liked this job');
+        return;
+      }
+     
       // console.log(jobId);
         // Toggle the liked status for the specific job
         // setLikedJobs((prevLikedJobs) => ({
